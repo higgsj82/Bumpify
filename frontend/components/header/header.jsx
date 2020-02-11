@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = ({ currentUser, logout }) => {
     const headerLinks = () => (
-        
-        <div className='main-header'>
+        <header className='main-header'>
             <div className='header-logo'>
                 <img className='logo'src={window.headerLogo} />
             </div>
@@ -18,16 +17,23 @@ const Header = ({ currentUser, logout }) => {
                     <Link to='/login' className='session-links'>Log In</Link>
                 </div>
             </div>
-        </div>
+        </header>
     )
 
     const userLinks = () => (
-        <div className='main-header'>
-            <Link to='#'>Premium</Link>
-            <Link to='#'>Help</Link>
-            <Link to='https://github.com/higgsj82/Bumpify'>Download</Link>
-            <button onClick={logout} className='session-links'>Log Out</button>
-        </div>
+        <header className='main-header'>
+            <div className='header-logo'>
+                <img className='logo' src={window.headerLogo} />
+            </div>
+            <div className='header session'>
+                <div className='link-container'>
+                    <Link to='#'>Premium</Link>
+                    <Link to='#'>Help</Link>
+                    <Link to='https://github.com/higgsj82/Bumpify'>Download</Link>
+                    <button onClick={logout} className='session-links'>Log Out</button>
+                </div>
+            </div>
+        </header>
     )
 
     return currentUser ? userLinks() : headerLinks()
