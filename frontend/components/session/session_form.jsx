@@ -5,8 +5,24 @@ class SessionForm extends React.Component {
         super(props);
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        const user = Object.assign({}, this.state);
+        this.props.formAction(user);
+    }
+
+    update() {
+
+    }
+    
     render() {
-        return null;
+        return (
+            <section className='form-section'>
+                <form className="session-forms">
+
+                </form>
+            </section>
+        )
     }
 }
 
