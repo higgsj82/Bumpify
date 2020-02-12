@@ -8,7 +8,7 @@
 
 User.destroy_all
 
-demo = User.create(email: 'demoUser@bumpify.com', 
+demo = User.create(email: 'guest@gmail.com', 
                   password: 'password', 
                   preferred_name: 'Demo User',
                   DOB: '11/19/2008',
