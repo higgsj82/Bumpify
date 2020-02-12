@@ -70,6 +70,11 @@
     font-size: 14px;
     padding: 16px 48px 18px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.checkbox {
+    cursor: pointer;
 }
 
 .forgot-div {
@@ -87,12 +92,14 @@
 
 .opp-link {
     width: 450px;
+    margin: auto;
     height: 48px;
     display: flex;
     border: 2px solid gray;
     border-radius: 500px;
     align-items: center;
     position: absolute;
+    cursor: pointer;
 }
 
 
@@ -152,6 +159,8 @@
     height: 48px;
     margin: auto;
     font-weight: bold;
+    padding: 16px 48px 18px;
+    cursor: pointer;
 }
 
 .signup-link {
@@ -170,4 +179,5 @@
 .login-link {
     color: #FF9933;
     padding-left: 5px;
+    cursor: pointer;
 }

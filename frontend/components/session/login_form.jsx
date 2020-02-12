@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
                             placeholder="Password" /> <br/>
                         <div className="row-submit">
                             <label className="checkbox-container">
-                                <input type="checkbox" />
+                                <input className="checkbox" type="checkbox" />
                                 <span className="checkmark"></span> Remember me
                             </label>
                             <div className="button-div">

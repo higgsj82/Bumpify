@@ -18,7 +18,7 @@ class User < ApplicationRecord
     validates :password_digest, :session_token, presence: true
     validates :preferred_name, :DOB, :gender, presence: true
     validates :password, length: { minimum: 8 }, allow_nil: true
-    # validates :gender, :inclusion=> { :in => [:female, :male, :neutral]
+    validates :gender, :inclusion => { :in => [:female, :male, :neutral]
 
     after_initialize :ensure_session_token
 

@@ -15,10 +15,16 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.signup(user);
+        if (user.email === user.confirmEmail) {
+            this.props.signup(user);
+        } else {
+            this.props.errors.push("Email addresses must match")
+            this.renderErrors()
+        }
     }
 
     update(field) {
@@ -75,15 +81,15 @@ class SignupForm extends React.Component {
                         <div className="dob-container">
                             <select className="dob dob-month" name="signup-form[month]">
                                 <option value="selected">Month</option>
-                                <option value="01">January</option>
-                                <option value="02">February</option>
-                                <option value="03">March</option>
-                                <option value="04">April</option>
-                                <option value="05">May</option>
-                                <option value="06">June</option>
-                                <option value="07">July</option>
-                                <option value="08">August</option>
-                                <option value="09">September</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
                                 <option value="10">October</option>
                                 <option value="11">Novemeber</option>
                                 <option value="12">December</option>
@@ -93,13 +99,13 @@ class SignupForm extends React.Component {
                         </div>
                         <div className="gender-container">
                             <label>
-                                <input type="radio"/> Female
+                                <input type="radio" value="female"/> Female
                             </label> 
                             <label>
-                                <input type="radio" /> Male
+                                <input type="radio" value="male"/> Male
                             </label> 
                             <label>
-                                <input type="radio" /> Non-binary
+                                <input type="radio" value="neutral" /> Non-binary
                             </label> 
                         </div>
                         <label className="checkbox-container">
