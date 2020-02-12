@@ -32,6 +32,7 @@
     width: 450px;
     height: 40px;
     border: 1px solid lightgray;
+    padding-left: 5px;
 }
 
 .row-submit {
@@ -83,16 +84,18 @@
 
 
 .opp-link {
-    padding: 16px 48px 18px;
     width: 450px;
     height: 48px;
     display: flex;
     border: 2px solid gray;
     border-radius: 500px;
     align-items: center;
+    position: absolute;
 }
 
 .signup-button {
+    display: flex;
     margin: auto;
+    position: relative;
     font-weight: bold;
 }
