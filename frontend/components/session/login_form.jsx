@@ -21,6 +21,18 @@ class LoginForm extends React.Component {
             [field]: e.currentTarget.value
         })
     }
+
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
     
     render() {
         return (
@@ -32,6 +44,7 @@ class LoginForm extends React.Component {
                     <div className="form-message-div">
                         <span className="form-message">To continue, log in to Bumpify.</span>
                     </div> <br/>
+                    {this.renderErrors()}
                     <form className="login-form" onSubmit={this.handleSubmit}>
                         <input className="input-field" 
                             type="text"

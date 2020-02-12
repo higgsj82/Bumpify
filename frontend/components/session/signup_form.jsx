@@ -27,6 +27,18 @@ class SignupForm extends React.Component {
         })
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     render() {
         return (
             <div className='form-div'>
@@ -37,7 +49,8 @@ class SignupForm extends React.Component {
                     <div className="form-message-div">
                         <span className="form-message">Sign up with your email address</span>
                     </div> <br/>
-                    <form className="login-form" onSubmit={this.handleSubmit}>
+                    {this.renderErrors()}
+                    <form className="signup-form" onSubmit={this.handleSubmit}>
                         <input className="input-field"
                             type="text"
                             value={this.state.email}
@@ -58,10 +71,10 @@ class SignupForm extends React.Component {
                             value={this.state.preferredName}
                             onChange={this.update('preferredName')}
                             placeholder="What should we call you?" /> <br/>
-                            <label>Date of Birth</label>
+                            <label className="dob-label">Date of Birth</label>
                         <div className="dob-container">
-                            <select className="dob" name="signup-form[month]">
-                                <option value selected="selected">month</option>
+                            <select className="dob dob-month" name="signup-form[month]">
+                                <option value="selected">Month</option>
                                 <option value="01">January</option>
                                 <option value="02">February</option>
                                 <option value="03">March</option>
@@ -75,26 +88,35 @@ class SignupForm extends React.Component {
                                 <option value="11">Novemeber</option>
                                 <option value="12">December</option>
                             </select>
-                            <input type="number" min="1" max="31" placeholder="Day"/>
-                            <input type="number" min="1900" max="2007"/>
+                            <input className="dob dob-day" type="number" min="1" max="31" placeholder="Day"/>
+                            <input className="dob dob-year" type="number" min="1900" max="2007" placeholder="Year"/>
                         </div>
-                        <div></div>
+                        <div className="gender-container">
+                            <label>
+                                <input type="radio"/> Female
+                            </label> 
+                            <label>
+                                <input type="radio" /> Male
+                            </label> 
+                            <label>
+                                <input type="radio" /> Non-binary
+                            </label> 
+                        </div>
                         <label className="checkbox-container">
                             <input type="checkbox" />
                             <span className="checkmark"></span>
                             Share my registration data with Bumpify's content 
                             providers for marketing purposes.
                         </label>
-                        <div className="button-div">
-                            <button className="session-button">SIGN UP</button>
+                        <div className="signup-button-div">
+                            <button className="signup-button">SIGN UP</button>
                         </div>
                     </form>
                     <div className="account-already-div">
                         <div className="opp-link-div">
-                            <div>Already have an account?</div>
-                            <div className="opp-link">
+                            <p>Already have an account? 
                                 {this.props.oppLink}
-                            </div>
+                            </p>
                         </div>
                     </div>
                 </div>

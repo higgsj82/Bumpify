@@ -8,7 +8,7 @@ import LoginForm from './login_form';
 const mSTP = ({ errors }) => {
     return {
         errors: errors.session,
-        oppLink: <Link to='/signup' className='signup-button'>SIGN UP FOR BUMPIFY</Link>
+        oppLink: <Link to='/signup' className='signup-link'>SIGN UP FOR BUMPIFY</Link>
     }
 }
 
