@@ -16,17 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 users: { [window.currentUser.id]: window.currentUser }
             }
         };
-        store = configureStore(preloadedState);
+        store = bumpifyStore(preloadedState);
         delete window.currentUser;
     } else {
-        store = configureStore();
+        store = bumpifyStore();
     }
     // testing
-    window.login = SessionAPIUtils.login;
-    window.logout = SessionAPIUtils.logout;
-    window.signup = SessionAPIUtils.signup;
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
     // testing
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store}></Root>, root);
