@@ -1,0 +1,98 @@
+.form-div {
+    display: flex;
+    position: absolute;
+    width: 100%;
+}
+.form-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 587px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 700px;
+}
+
+.form-message-div {
+    display: flex;
+    height: 60px;
+}
+
+.form-message {
+    margin: auto;
+    font-weight: bold;
+}
+
+.input-field {
+    display: block;
+    background-origin: padding-box;
+    width: 450px;
+    height: 40px;
+    border: 1px solid lightgray;
+}
+
+.row-submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.checkbox-container input {
+    margin-right: 3px;
+}
+
+.button-div {
+    display: inherit;
+    width: 170px;
+    height: 48px;
+    // padding: 0px 15px;
+    justify-content: flex-end;
+}
+
+.session-button {
+    margin: auto;
+    background-color: #FF9933;
+    border-radius: 500px;
+    height: 48px;
+    font-size: 14px;
+    padding: 16px 48px 18px;
+    font-weight: bold;
+}
+
+.forgot-div {
+    display: flex;
+    width: 480px;
+    height: 48px;
+}
+
+.forgot-div p {
+    margin: auto;
+    color: #FF9933;
+    font-weight: bold;
+}
+
+
+.opp-link {
+    padding: 16px 48px 18px;
+    width: 450px;
+    height: 48px;
+    display: flex;
+    border: 2px solid gray;
+    border-radius: 500px;
+    align-items: center;
+}
+
+.signup-button {
+    margin: auto;
+    font-weight: bold;
+}
