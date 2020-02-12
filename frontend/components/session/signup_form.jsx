@@ -19,12 +19,7 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        if (user.email === user.confirmEmail) {
-            this.props.signup(user);
-        } else {
-            this.props.errors.push("Email addresses must match")
-            this.renderErrors()
-        }
+        this.props.signup(user);
     }
 
     update(field) {

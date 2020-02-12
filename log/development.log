@@ -2999,3 +2999,17 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 315ms (Views: 308.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-02-12 16:51:06 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 156ms (Views: 151.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-12 16:56:00 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 185ms (Views: 177.0ms | ActiveRecord: 0.0ms)
+
+
