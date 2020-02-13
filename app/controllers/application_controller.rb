@@ -18,10 +18,9 @@ class ApplicationController < ActionController::Base
     def logout!
         current_user.reset_session_token!
         session[:session_token] = nil
-        redirect_to api_session_url
     end
 
-    def ensure_logged_in
-        redirect_to api_session_url unless logged_in?
-    end
+    # def ensure_logged_in
+    #     redirect_to api_session_url unless logged_in?
+    # end
 end

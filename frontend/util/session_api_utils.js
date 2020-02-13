@@ -2,7 +2,7 @@ export const signup = newUser => {
     return $.ajax({
         url: '/api/users',
         method: 'POST',
-        data: { newUser }
+        data: { user: newUser }
     })
 };
 
@@ -10,7 +10,7 @@ export const login = returningUser => {
     return $.ajax({
         url: '/api/session',
         method: 'POST',
-        data: { returningUser }
+        data: { user: returningUser }
     })
 };
 

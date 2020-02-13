@@ -7,27 +7,38 @@ class SignupForm extends React.Component {
             email: "",
             confirmEmail: "",
             password: "",
-            preferredName: "",
+            preferred_name: "",
             DOB: "",
             gender: "",
             month: "",
             day: "",
             year: ""
         }
-        this.formatDate = this.formatDate.bind(this);
+        // this.formatDate = this.formatDate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    formatDate() {
-        const { month, day, year} = this.state;
-        this.state.DOB = `${month}/${day}/${year}`;
-        debugger
-        this.handleSubmit();
-    }
+    // formatDate() {
+    //     this.state.DOB =`${this.state.year}${this.state.month}${this.state.day}`
+    //     return e => (
+    //         this.handleSubmit(e)
+    //     )
+    // }
+
+    // format (day) {
+    //     if (day.value.length === 1) {
+    //         day.value = "0" + day.value
+    //     }
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
+        if (this.state.day.length < 2) {
+            this.state.day = `0${this.state.day}`
+        }
+        this.state.DOB = `${this.state.year}${this.state.month}${this.state.day}`;
         const user = Object.assign({}, this.state);
+        debugger
         this.props.signup(user);
     }
 
@@ -60,7 +71,7 @@ class SignupForm extends React.Component {
                         <span className="form-message">Sign up with your email address</span>
                     </div> <br/>
                     {this.renderErrors()}
-                    <form className="signup-form" onSubmit={this.formatDate}>
+                    <form className="signup-form" onSubmit={this.handleSubmit}>
                         <input className="input-field"
                             type="text"
                             value={this.state.email}
@@ -78,22 +89,22 @@ class SignupForm extends React.Component {
                             placeholder="Password" /> <br/>
                         <input className="input-field"
                             type="text"
-                            value={this.state.preferredName}
-                            onChange={this.update('preferredName')}
+                            value={this.state.preferred_name}
+                            onChange={this.update('preferred_name')}
                             placeholder="What should we call you?" /> <br/>
                             <label className="dob-label">Date of Birth</label>
                         <div className="dob-container">
-                            <select className="dob dob-month" value={this.state.month} onChange={this.update('month')} name="signup-form[month]">
+                            <select className="dob dob-month" value={this.state.month} onChange={this.update('month')} >
                                 <option value="selected">Month</option>
-                                <option value="1">January</option>
-                                <option value="2">February</option>
-                                <option value="3">March</option>
-                                <option value="4">April</option>
-                                <option value="5">May</option>
-                                <option value="6">June</option>
-                                <option value="7">July</option>
-                                <option value="8">August</option>
-                                <option value="9">September</option>
+                                <option value="01">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
                                 <option value="10">October</option>
                                 <option value="11">Novemeber</option>
                                 <option value="12">December</option>
@@ -101,8 +112,9 @@ class SignupForm extends React.Component {
                             <input className="dob dob-day" 
                                     type="number"
                                     value={this.state.day}
+                                    // on={this.format(this.state.day)}
                                     onChange={this.update('day')}
-                                    min="1" 
+                                    min="01" 
                                     max="31" 
                                     placeholder="Day"/>
                             <input className="dob dob-year" 
@@ -115,13 +127,25 @@ class SignupForm extends React.Component {
                         </div>
                         <div className="gender-container">
                             <label>
-                                <input type="radio" value={this.state.gender}/> Female
+                                <input type="radio" 
+                                        name="gender" 
+                                        value="female" 
+                                        onChange={this.update('gender')}
+                                        /> Female
                             </label> 
                             <label>
-                                <input type="radio" value={this.state.gender}/> Male
+                                <input type="radio"
+                                        name="gender" 
+                                        value="male"
+                                        onChange={this.update('gender')}
+                                        /> Male
                             </label> 
                             <label>
-                                <input type="radio" value={this.state.gender}/> Non-binary
+                                <input type="radio" 
+                                        name="gender" 
+                                        value="neutral"
+                                        onChange={this.update('gender')}
+                                        /> Non-binary
                             </label> 
                         </div>
                         <label className="checkbox-container">

@@ -15,9 +15,8 @@ const App = () => {
     return (
         <div>
             <HeaderContainer/>
-            <Route path="/" component={HomePageContainer} />
             <Switch>
-                {/* <AuthRoute path="/" component={HomePageContainer} /> */}
+                <AuthRoute exact path="/" component={HomePageContainer} />
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <AuthRoute path="/signup" component={SignupFormContainer} />
             </Switch>
