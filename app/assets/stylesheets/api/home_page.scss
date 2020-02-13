@@ -9,16 +9,39 @@
 }
 
 .greeting-div {
+    display: flex;
     margin: auto;
     font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
     color: white;
+    flex-direction: column;
 }
 
 .greeting {
-    font-size: 64px;
+    font-size: 70px;
     font-weight: bolder;
+    padding-bottom: 20px;
 }
 
 .greeting-msg {
+    margin: auto;
+    padding-bottom: 20px;
+}
 
+.demo-button-div {
+    margin: auto;
+    display: flex;
+    width: 200px;
+    height: 48px;
+}
+
+.demo-button {
+    // display: flex;
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 48px;
+    font-family: inherit;
+    font-weight: bold;
+    background-color: #FF9933;
+    border-radius: 500px;
 }

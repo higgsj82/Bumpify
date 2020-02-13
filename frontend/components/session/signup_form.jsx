@@ -14,22 +14,10 @@ class SignupForm extends React.Component {
             day: "",
             year: ""
         }
-        // this.formatDate = this.formatDate.bind(this);
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // formatDate() {
-    //     this.state.DOB =`${this.state.year}${this.state.month}${this.state.day}`
-    //     return e => (
-    //         this.handleSubmit(e)
-    //     )
-    // }
-
-    // format (day) {
-    //     if (day.value.length === 1) {
-    //         day.value = "0" + day.value
-    //     }
-    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -62,10 +50,10 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className='form-div'>
-                <div className="form-header">
-                    {/* logo goes here */}
-                </div>
                 <div className="form-container">
+                    <div className="form-logo">
+                        <img className='session-logo signup-logo' src={window.sessionLogo} />
+                    </div>
                     <div className="form-message-div">
                         <span className="form-message">Sign up with your email address</span>
                     </div> <br/>

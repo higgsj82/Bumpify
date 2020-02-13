@@ -37,10 +37,10 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className='form-div'>
-                <div className="form-header">
-                    {/* logo goes here */}
-                </div>
                 <div className="form-container">
+                <div className="form-logo">
+                    <img className='session-logo' src={window.sessionLogo} />
+                </div>
                     <div className="form-message-div">
                         <span className="form-message">To continue, log in to Bumpify.</span>
                     </div> <br/>

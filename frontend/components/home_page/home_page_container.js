@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const mSTP = (state) => {
     return {
-        user: {email: "guest@gmail.com", password: "password"}
+        user: {email: "guest@yahoo.com", password: "password"}
     }
 }
 
