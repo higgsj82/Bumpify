@@ -9,12 +9,21 @@ class SignupForm extends React.Component {
             password: "",
             preferredName: "",
             DOB: "",
-            gender: ""
+            gender: "",
+            month: "",
+            day: "",
+            year: ""
         }
-
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.formatDate = this.formatDate.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    formatDate() {
+        const { month, day, year} = this.state;
+        this.state.DOB = `${month}/${day}/${year}`;
+        debugger
+        this.handleSubmit();
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -51,7 +60,7 @@ class SignupForm extends React.Component {
                         <span className="form-message">Sign up with your email address</span>
                     </div> <br/>
                     {this.renderErrors()}
-                    <form className="signup-form" onSubmit={this.handleSubmit}>
+                    <form className="signup-form" onSubmit={this.formatDate}>
                         <input className="input-field"
                             type="text"
                             value={this.state.email}
@@ -74,7 +83,7 @@ class SignupForm extends React.Component {
                             placeholder="What should we call you?" /> <br/>
                             <label className="dob-label">Date of Birth</label>
                         <div className="dob-container">
-                            <select className="dob dob-month" name="signup-form[month]">
+                            <select className="dob dob-month" value={this.state.month} onChange={this.update('month')} name="signup-form[month]">
                                 <option value="selected">Month</option>
                                 <option value="1">January</option>
                                 <option value="2">February</option>
@@ -89,18 +98,30 @@ class SignupForm extends React.Component {
                                 <option value="11">Novemeber</option>
                                 <option value="12">December</option>
                             </select>
-                            <input className="dob dob-day" type="number" min="1" max="31" placeholder="Day"/>
-                            <input className="dob dob-year" type="number" min="1900" max="2007" placeholder="Year"/>
+                            <input className="dob dob-day" 
+                                    type="number"
+                                    value={this.state.day}
+                                    onChange={this.update('day')}
+                                    min="1" 
+                                    max="31" 
+                                    placeholder="Day"/>
+                            <input className="dob dob-year" 
+                                    type="number" 
+                                    value={this.state.year}
+                                    onChange={this.update('year')}
+                                    min="1900" 
+                                    max="2007" 
+                                    placeholder="Year"/>
                         </div>
                         <div className="gender-container">
                             <label>
-                                <input type="radio" value="female"/> Female
+                                <input type="radio" value={this.state.gender}/> Female
                             </label> 
                             <label>
-                                <input type="radio" value="male"/> Male
+                                <input type="radio" value={this.state.gender}/> Male
                             </label> 
                             <label>
-                                <input type="radio" value="neutral" /> Non-binary
+                                <input type="radio" value={this.state.gender}/> Non-binary
                             </label> 
                         </div>
                         <label className="checkbox-container">

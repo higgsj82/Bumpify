@@ -9,10 +9,9 @@ class HomePage extends React.Component {
     render() {
         return (
             <div className="home-div">
-                    <img className='logo' src={window.background} />
                 <div className="greeting-div">
                     <h1 className="greeting">Music lives here.</h1>
-                    <p className="greeting-msg">Hundreds of songs. No credit card needed.</p>
+                    <h4 className="greeting-msg">Hundreds of songs. No credit card needed.</h4>
                 </div>
             </div>
         )
