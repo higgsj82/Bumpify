@@ -38,7 +38,6 @@ class SignupForm extends React.Component {
         }
         this.state.DOB = `${this.state.year}${this.state.month}${this.state.day}`;
         const user = Object.assign({}, this.state);
-        debugger
         this.props.signup(user);
     }
 
