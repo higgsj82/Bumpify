@@ -5,7 +5,7 @@ const Header = ({ currentUser, logout }) => {
     const headerLinks = () => (
         <header className='main-header'>
             <div className='header-logo'>
-                <img className='logo'src={window.headerLogo} />
+                <a href="/"><img className='logo' src={window.headerLogo} /></a>
             </div>
             <div className='header no-session'>
                 <div className='link-container'>
@@ -23,7 +23,7 @@ const Header = ({ currentUser, logout }) => {
     const userLinks = () => (
         <header className='main-header'>
             <div className='header-logo'>
-                <img className='logo' src={window.headerLogo} />
+                <a href="/"><img className='logo' src={window.headerLogo} /></a>
             </div>
             <div className='header session'>
                 <div className='link-container'>
