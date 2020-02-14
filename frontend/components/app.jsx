@@ -11,12 +11,13 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import MainPageContainer from './main_page/main_page_container';
 
-
+// does main route need to be in switch?
+// try putting an auth route inside the 
 const App = () => {
     return (
         <div className="app-div">
-                <MainRoute exact path="/" component={MainPageContainer} other={SplashPageContainer}/>
             <Switch>
+                <MainRoute exact path="/" component={MainPageContainer} other={SplashPageContainer}/>
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <AuthRoute path="/signup" component={SignupFormContainer} />
             </Switch>
