@@ -36,6 +36,7 @@ class LoginForm extends React.Component {
     
     render() {
         return (
+            <>
             <div className='form-div'>
                 <div className="form-container">
                 <div className="form-logo">
@@ -73,7 +74,7 @@ class LoginForm extends React.Component {
                     </div>
                     <div>
                         <div className="opp-link-div">
-                            <div>Don't have an account?</div>
+                            <p>Don't have an account?</p>
                             <div className="opp-link">
                                 {this.props.oppLink}
                             </div>
@@ -81,6 +82,7 @@ class LoginForm extends React.Component {
                     </div>
                 </div>
             </div>
+            </>
         )
     }
 }

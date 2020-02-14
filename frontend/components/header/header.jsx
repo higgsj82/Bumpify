@@ -9,9 +9,9 @@ const Header = ({ currentUser, logout }) => {
             </div>
             <div className='header no-session'>
                 <div className='link-container'>
-                    <Link to='#'>Premium</Link>
-                    <Link to='#'>Help</Link>
-                    <Link to='https://github.com/higgsj82/Bumpify'>Download</Link>
+                    <a href='https://www.linkedin.com/in/ja-lisha-higgs-b8331a42'>LinkedIn</a>
+                    <a href='https://github.com/higgsj82'>GitHub</a>
+                    <a href='https://github.com/higgsj82/Bumpify' target="_blank">Download</a>
                     <p className='link-divider'>｜</p>
                     <Link to='/signup' className='session-links'>Sign Up</Link>
                     <Link to='/login' className='session-links'>Log In</Link>
@@ -29,7 +29,7 @@ const Header = ({ currentUser, logout }) => {
                 <div className='link-container'>
                     <Link to='#'>Premium</Link>
                     <Link to='#'>Help</Link>
-                    <Link to='https://github.com/higgsj82/Bumpify'>Download</Link>
+                    <a href='https://github.com/higgsj82/Bumpify'>Download</a>
                     <button onClick={logout} className='session-links'>Log Out</button>
                 </div>
             </div>

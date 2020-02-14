@@ -8,6 +8,7 @@ class HomePage extends React.Component {
 
     render() {
         return (
+            <>    
             <div className="home-div">
                 <div className="greeting-div">
                     <h1 className="greeting">Music lives here.</h1>
@@ -19,6 +20,7 @@ class HomePage extends React.Component {
                     </div>
                 </div>
             </div>
+            </>
         )
     }
 

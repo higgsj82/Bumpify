@@ -1,9 +1,17 @@
+.app-div {
+    position: relative;
+}
+
+.main-header {
+    position: absolute;
+}
+
 .home-div {
     background-image: url(asset_path('static_background.png'));
     background-size: 100% 100%;
     background-repeat: no-repeat;
     margin: auto;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
 }
@@ -25,6 +33,8 @@
 .greeting-msg {
     margin: auto;
     padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: unset;
 }
 
 .demo-button-div {
@@ -45,4 +55,8 @@
     background-color: #FF9933;
     border-radius: 500px;
     cursor: pointer;
+}
+
+.demo-button:hover {
+    background-color: #FFCC33;
 }

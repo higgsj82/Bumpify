@@ -13,7 +13,7 @@ import HomePageContainer from './home_page/home_page_container';
 
 const App = () => {
     return (
-        <div>
+        <div className="app-div">
             <HeaderContainer/>
             <Switch>
                 <AuthRoute exact path="/" component={HomePageContainer} />
