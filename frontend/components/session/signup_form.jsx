@@ -18,6 +18,10 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount () {
+        this.props.clearErrors()
+    }
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -53,7 +57,7 @@ class SignupForm extends React.Component {
             <div className='form-div'>
                 <div className="form-container">
                     <div className="form-logo">
-                        <img className='session-logo signup-logo' src={window.sessionLogo} />
+                        <a href="/"><img className='session-logo signup-logo' src={window.sessionLogo} /></a>
                     </div>
                     <div className="form-message-div">
                         <span className="form-message">Sign up with your email address.</span>

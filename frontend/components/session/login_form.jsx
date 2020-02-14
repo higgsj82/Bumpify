@@ -10,11 +10,14 @@ class LoginForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.login(user);
-        this.props.clearErrors();
     }
 
     update(field) {
@@ -41,7 +44,7 @@ class LoginForm extends React.Component {
             <div className='form-div'>
                 <div className="form-container">
                 <div className="form-logo">
-                    <img className='session-logo' src={window.sessionLogo} />
+                    <a href="/"><img className='session-logo' src={window.sessionLogo} /></a>
                 </div>
                     <div className="form-message-div">
                         <span className="login-form-message">To continue, log in to Bumpify.</span>

@@ -4,7 +4,7 @@
     width: 100%;
 }
 .form-container {
-    padding-top: 100px;
+    padding-top: 30px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -20,6 +20,10 @@
 
 .form-logo {
     display: flex;
+}
+
+.form-logo a {
+    margin: auto;
 }
 
 .session-logo {

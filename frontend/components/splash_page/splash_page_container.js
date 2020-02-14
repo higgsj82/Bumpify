@@ -1,5 +1,5 @@
 import { login } from '../../actions/session_actions';
-import HomePage from './home_page';
+import SplashPage from './splash_page';
 import { connect } from 'react-redux';
 
 const mSTP = (state) => {
@@ -14,4 +14,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(HomePage);
+export default connect(mSTP, mDTP)(SplashPage);

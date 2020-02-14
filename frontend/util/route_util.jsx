@@ -12,15 +12,18 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
     )} />
 );
 
-// const Protected = ({ component: Component, path, loggedIn, exact }) => (
-//     <Route path={path} exact={exact} render={(props) => (
-//         loggedIn ? (
-//             <Component {...props} />
-//         ) : (
-//                 <Redirect to="/login" />
-//             )
-//     )} />
-// );
+const Main = ({ component: Component, other: Other, path, loggedIn, exact }) => (
+    <Route path={path} exact={exact} render={(props) => (
+        loggedIn ? (
+            <Component {...props} />
+        ) : (
+                <Other {...props} />
+            )
+    )} />
+);
+
+// make a similar function that renders the main page or the splash page based
+// on if user is logged in
 
 const mapStateToProps = state => (
     { loggedIn: Boolean(state.session.id) }
@@ -28,4 +31,4 @@ const mapStateToProps = state => (
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 
-// export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
+export const MainRoute = withRouter(connect(mapStateToProps)(Main));

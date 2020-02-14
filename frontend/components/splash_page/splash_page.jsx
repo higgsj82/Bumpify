@@ -1,15 +1,17 @@
 import React from 'react';
+import HeaderContainer from '../header/header_container';
 
 
-class HomePage extends React.Component {
+class SplashPage extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <>    
+            <> 
             <div className="home-div">
+                <HeaderContainer />   
                 <div className="greeting-div">
                     <h1 className="greeting">Music lives here.</h1>
                     <h4 className="greeting-msg">Hundreds of songs. No credit card needed.</h4>
@@ -26,4 +28,4 @@ class HomePage extends React.Component {
 
 }
 
-export default HomePage;
+export default SplashPage;
