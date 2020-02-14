@@ -43,6 +43,12 @@
     font-weight: bold;
 }
 
+.login-form-message{
+    margin: auto;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
 .input-field {
     display: block;
     background-origin: padding-box;
@@ -99,27 +105,34 @@
 
 .forgot-div {
     display: flex;
-    width: 480px;
     height: 48px;
 }
 
 .forgot-div p {
+    padding-top: 20px;
     margin: auto;
     color: #FF9933;
-    font-weight: bold;
+    font-weight: 900px;
 }
 
 .forgot-div p:hover {
     color: #FFCC33;
 }
 
+.last-div {
+    height: 300px;
+}
+
 .opp-link-div {
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 .opp-link-div p {
     font-weight: bold;
     margin: auto;
+    padding-bottom: 10px;
 }
 
 .opp-link {
@@ -128,7 +141,6 @@
     height: 48px;
     display: flex;
     align-items: center;
-    position: absolute;
     cursor: pointer;
 }
 
@@ -184,38 +196,47 @@
     height: 40px;
     display: flex;
     align-items: center;
+    padding: 10px;
+    margin: 10px 0;
 }
 
 .gender-container label {
     padding-right: 20px;
 }
 
+.checkbox-container {
+    margin: unset;
+    padding-bottom: 30px;
+}
+
 .signup-button-div {
     display: flex;
     width: 80%;
     height: 48px;
-    border-radius: 500px;
-    background-color: #FF9933;
     align-items: center;
     margin: auto;
-}
-
-.signup-button-div:hover {
-    background-color: #FFCC33;
+    // padding-top: 30px;
 }
 
 .signup-button {
+    border-radius: 500px;
+    background-color: #FF9933;
     height: 48px;
     margin: auto;
     font-weight: bold;
-    padding: 16px 48px 18px;
+    padding: 16px 140px 18px;
     cursor: pointer;
+}
+
+.signup-button:hover {
+    background-color: #FFCC33;
 }
 
 .account-already-div {
     display: flex;
     flex-direction: row;
     margin: auto;
+    padding-bottom: 30px;
 }
 
 .login-link {
@@ -226,4 +247,8 @@
 
 .login-link:hover {
     color: #FFCC33;
+}
+
+.errors {
+    color: #FF3855
 }

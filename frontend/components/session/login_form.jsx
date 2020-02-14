@@ -14,6 +14,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.login(user);
+        this.props.clearErrors();
     }
 
     update(field) {
@@ -26,7 +27,7 @@ class LoginForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li className="errors" key={`error-${i}`}>
                         {error}
                     </li>
                 ))}
@@ -43,7 +44,7 @@ class LoginForm extends React.Component {
                     <img className='session-logo' src={window.sessionLogo} />
                 </div>
                     <div className="form-message-div">
-                        <span className="form-message">To continue, log in to Bumpify.</span>
+                        <span className="login-form-message">To continue, log in to Bumpify.</span>
                     </div> <br/>
                     {this.renderErrors()}
                     <form className="login-form" onSubmit={this.handleSubmit}>
@@ -58,7 +59,7 @@ class LoginForm extends React.Component {
                             onChange={this.update('password')}
                             placeholder="Password" /> <br/>
                         <div className="row-submit">
-                            <label className="checkbox-container">
+                            <label className="checkbox-container-login">
                                 <input className="checkbox" type="checkbox" />
                                 <span className="checkmark"></span> Remember me
                             </label>
@@ -72,7 +73,7 @@ class LoginForm extends React.Component {
                             <a href="#">Forgot your password?</a>
                         </p>
                     </div>
-                    <div>
+                    <div className="last-div">
                         <div className="opp-link-div">
                             <p>Don't have an account?</p>
                             <div className="opp-link">

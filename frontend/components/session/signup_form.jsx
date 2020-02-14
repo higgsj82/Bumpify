@@ -39,7 +39,7 @@ class SignupForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li className="errors" key={`error-${i}`}>
                         {error}
                     </li>
                 ))}
@@ -56,7 +56,7 @@ class SignupForm extends React.Component {
                         <img className='session-logo signup-logo' src={window.sessionLogo} />
                     </div>
                     <div className="form-message-div">
-                        <span className="form-message">Sign up with your email address</span>
+                        <span className="form-message">Sign up with your email address.</span>
                     </div> <br/>
                     {this.renderErrors()}
                     <form className="signup-form" onSubmit={this.handleSubmit}>

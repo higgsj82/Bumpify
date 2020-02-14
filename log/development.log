@@ -6226,3 +6226,891 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 101ms (Views: 93.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-02-14 08:45:48 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 250ms (Views: 221.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 08:49:21 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 138ms (Views: 132.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:56:39 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 71ms (Views: 0.3ms | ActiveRecord: 32.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:56:59 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:04 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 6ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:05 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 4ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:05 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:05 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:07 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:07 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 6ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:08 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 38ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:08 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:09 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:09 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:09 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:09 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:09 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:57:10 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bfjse", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bfjse"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 08:57:33 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 961ms (Views: 953.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 08:58:04 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 81ms (Views: 75.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 08:58:12 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (4.7ms)
+Completed 200 OK in 361ms (Views: 16.7ms | ActiveRecord: 19.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-02-14 08:58:18 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gc9TZA77E0yLldQyLWStpw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (28.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "t4-gqZCJ5aP7mWS2MJyetg"], ["updated_at", "2020-02-14 13:58:18.948655"], ["id", 3]]
+  ↳ app/models/user.rb:39
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+Completed 200 OK in 64ms (Views: 0.3ms | ActiveRecord: 36.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 09:01:02 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"ffg", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ffg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:09:35 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 1281ms (Views: 1273.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:12:46 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 739ms (Views: 734.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:12:59 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 121ms (Views: 117.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 09:13:07 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 8ms (Views: 0.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:13:51 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 57ms (Views: 52.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 09:14:11 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:16:36 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Started POST "/api/session" for ::1 at 2020-02-14 09:16:36 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Completed 200 OK in 740ms (Views: 735.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:31:46 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 708ms (Views: 699.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 09:32:03 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:33:21 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 683ms (Views: 678.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 09:33:37 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:36:54 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 681ms (Views: 673.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:37:19 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 791ms (Views: 788.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 09:37:22 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:38:14 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 726ms (Views: 720.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:38:33 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 74ms (Views: 69.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 09:38:42 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 09:38:49 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"0", "gender"=>"", "month"=>"", "day"=>"0", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 322ms (Views: 0.4ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 09:38:50 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"00", "gender"=>"", "month"=>"", "day"=>"00", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 304ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 09:38:51 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"00", "gender"=>"", "month"=>"", "day"=>"00", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 316ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 09:38:52 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"00", "gender"=>"", "month"=>"", "day"=>"00", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 299ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:39:07 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 09:39:10 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"0", "gender"=>"", "month"=>"", "day"=>"0", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 324ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 09:39:12 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"00", "gender"=>"", "month"=>"", "day"=>"00", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 302ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:40:26 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 583ms (Views: 577.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 09:40:29 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"0", "gender"=>"", "month"=>"", "day"=>"0", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 352ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:49:22 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 1353ms (Views: 1345.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 09:49:27 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"0", "gender"=>"", "month"=>"", "day"=>"0", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 308ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:49:54 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 105ms (Views: 99.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:49:59 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 83ms (Views: 76.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 09:50:05 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 09:50:10 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"0", "gender"=>"", "month"=>"", "day"=>"0", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 314ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:50:42 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 742ms (Views: 734.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 09:50:45 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"0", "gender"=>"", "month"=>"", "day"=>"0", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 329ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:52:24 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 305ms (Views: 298.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:52:28 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 58ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:52:39 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 223ms (Views: 218.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:54:24 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 181ms (Views: 177.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:54:51 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 1223ms (Views: 1210.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:55:46 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 228ms (Views: 221.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:55:49 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 63ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:56:25 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 213ms (Views: 207.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:56:44 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:57:02 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 172ms (Views: 168.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:57:12 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 205ms (Views: 201.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:57:22 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 189ms (Views: 184.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:57:37 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 188ms (Views: 183.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:58:14 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 193ms (Views: 186.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:58:36 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 191ms (Views: 186.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:59:20 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 204ms (Views: 198.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 09:59:35 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 247ms (Views: 243.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:00:02 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 213ms (Views: 208.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:00:10 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 175ms (Views: 169.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:01:32 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 205ms (Views: 194.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:01:55 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 182ms (Views: 179.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:02:49 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 208ms (Views: 201.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:04:19 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 240ms (Views: 233.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:05:02 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 249ms (Views: 241.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:05:26 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 180ms (Views: 175.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:05:39 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 198ms (Views: 192.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:06:03 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 215ms (Views: 209.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:06:11 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 247ms (Views: 243.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:06:28 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 229ms (Views: 223.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:09:43 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 690ms (Views: 686.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:11:22 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 924ms (Views: 914.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:11:43 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 192ms (Views: 185.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:12:50 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 220ms (Views: 212.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:13:00 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 203ms (Views: 199.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:13:03 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 56ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:13:12 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 213ms (Views: 204.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:13:40 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 260ms (Views: 254.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:15:52 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 251ms (Views: 241.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:16:03 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 194ms (Views: 186.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:18:50 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 894ms (Views: 890.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:19:24 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 258ms (Views: 251.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:19:30 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 759ms (Views: 755.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 10:19:37 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"0", "gender"=>"", "month"=>"", "day"=>"0", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 314ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:25:14 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 712ms (Views: 703.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 10:25:19 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"0", "gender"=>"", "month"=>"", "day"=>"0", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 413ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 10:25:30 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:26:40 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 863ms (Views: 857.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 10:26:45 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:31:38 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 842ms (Views: 833.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-14 10:31:43 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 10:33:06 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 722ms (Views: 715.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-14 10:33:11 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"0", "gender"=>"", "month"=>"", "day"=>"0", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 314ms (Views: 0.7ms | ActiveRecord: 0.9ms)
+
+
