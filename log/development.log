@@ -8825,3 +8825,5 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 7.3ms)
 
 
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Jay/.rbenv/versions/2.5.1/bin/annotate:23
