@@ -4,7 +4,6 @@ class Api::SongsController < ApplicationController
     end
 
     def show
-        @song = 
     end
 
     private 
