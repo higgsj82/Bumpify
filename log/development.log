@@ -11319,3 +11319,1483 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 194ms (Views: 188.6ms | ActiveRecord: 0.7ms)
 
 
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (29.8ms)[0m  [1m[32mINSERT INTO "artists" ("artist_name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_name", "Beyoncé"], ["bio", "One of the most success artists and \n                    music performers in modern history.\n                    A living legend."], ["created_at", "2020-02-17 15:35:41.237279"], ["updated_at", "2020-02-17 15:35:41.237279"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAlbum Create (7.8ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["album_name", "Lemonade"], ["artist_id", 1], ["created_at", "2020-02-17 15:35:51.565009"], ["updated_at", "2020-02-17 15:35:51.565009"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Load (7.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSong Create (9.9ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Pray You Catch Me"], ["album_id", 1], ["created_at", "2020-02-17 15:36:00.564087"], ["updated_at", "2020-02-17 15:36:00.564087"]]
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (3.9ms)[0m  [1m[32mINSERT INTO "artists" ("artist_name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_name", "Beyoncé"], ["bio", "One of the most success artists and \n                    music performers in modern history.\n                    A living legend."], ["created_at", "2020-02-17 16:19:05.170882"], ["updated_at", "2020-02-17 16:19:05.170882"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAlbum Create (2.0ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["album_name", "Lemonade"], ["artist_id", 2], ["created_at", "2020-02-17 16:19:12.883672"], ["updated_at", "2020-02-17 16:19:12.883672"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSong Create (7.3ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Pray You Catch Me"], ["album_id", 2], ["created_at", "2020-02-17 16:19:21.314370"], ["updated_at", "2020-02-17 16:19:21.314370"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mFollow Load (6.4ms)[0m  [1m[34mSELECT "follows".* FROM "follows"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mLike Load (5.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSong Load (1.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (7.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (3.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAlbum Destroy (2.8ms)[0m  [1m[31mDELETE FROM "albums" WHERE "albums"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Album"], ["name", "album_cover"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAlbum Destroy (0.4ms)[0m  [1m[31mDELETE FROM "albums" WHERE "albums"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Album"], ["name", "album_cover"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mArtist Destroy (0.7ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mArtist Destroy (0.7ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Destroy (1.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "preferred_name", "DOB", "gender", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "guest@yahoo.com"], ["preferred_name", "Demo User"], ["DOB", "2008-11-19"], ["gender", "neutral"], ["password_digest", "$2a$12$WyfeuX6h2RCvNKj9rO0y3OqXVI0QcGgFsilKh3xXBzPedPU8Qo/cW"], ["session_token", "hyMuxXrjGPg8hn02OrK46g"], ["created_at", "2020-02-17 16:30:04.256785"], ["updated_at", "2020-02-17 16:30:04.256785"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mArtist Create (0.7ms)[0m  [1m[32mINSERT INTO "artists" ("artist_name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_name", "Beyoncé"], ["bio", "One of the most success artists and \n                    music performers in modern history.\n                    A living legend."], ["created_at", "2020-02-17 16:30:04.261764"], ["updated_at", "2020-02-17 16:30:04.261764"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAlbum Create (0.6ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["album_name", "Lemonade"], ["artist_id", 3], ["created_at", "2020-02-17 16:30:04.272329"], ["updated_at", "2020-02-17 16:30:04.272329"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Pray You Catch Me"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.280535"], ["updated_at", "2020-02-17 16:30:04.280535"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Hold Up"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.286455"], ["updated_at", "2020-02-17 16:30:04.286455"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Don't Hurt Yourself"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.292114"], ["updated_at", "2020-02-17 16:30:04.292114"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Sorry"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.297005"], ["updated_at", "2020-02-17 16:30:04.297005"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "6 Inch"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.302369"], ["updated_at", "2020-02-17 16:30:04.302369"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Daddy Lessons"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.307609"], ["updated_at", "2020-02-17 16:30:04.307609"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Love Drought"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.313860"], ["updated_at", "2020-02-17 16:30:04.313860"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Sandcastles"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.321014"], ["updated_at", "2020-02-17 16:30:04.321014"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Forward"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.326436"], ["updated_at", "2020-02-17 16:30:04.326436"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Freedom"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.331889"], ["updated_at", "2020-02-17 16:30:04.331889"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "All Night"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.336490"], ["updated_at", "2020-02-17 16:30:04.336490"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Formation"], ["album_id", 3], ["created_at", "2020-02-17 16:30:04.341903"], ["updated_at", "2020-02-17 16:30:04.341903"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mFollow Load (1.0ms)[0m  [1m[34mSELECT "follows".* FROM "follows"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mLike Load (0.8ms)[0m  [1m[34mSELECT "likes".* FROM "likes"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.8ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAlbum Destroy (0.5ms)[0m  [1m[31mDELETE FROM "albums" WHERE "albums"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Album"], ["name", "album_cover"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mArtist Destroy (0.8ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:13
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "preferred_name", "DOB", "gender", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "guest@yahoo.com"], ["preferred_name", "Demo User"], ["DOB", "2008-11-19"], ["gender", "neutral"], ["password_digest", "$2a$12$AGhrZjl2l4178qi2fsM5fOzY5FYwQ27hqXqpDDnBHpP/oHD5NLNOC"], ["session_token", "6Tp3olGMW7kymiEb2PFNdw"], ["created_at", "2020-02-17 16:33:41.908611"], ["updated_at", "2020-02-17 16:33:41.908611"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mArtist Create (0.6ms)[0m  [1m[32mINSERT INTO "artists" ("artist_name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_name", "Beyoncé"], ["bio", "One of the most success artists and \n                    music performers in modern history.\n                    A living legend."], ["created_at", "2020-02-17 16:33:41.913154"], ["updated_at", "2020-02-17 16:33:41.913154"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAlbum Create (0.6ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["album_name", "Lemonade"], ["artist_id", 4], ["created_at", "2020-02-17 16:33:41.923259"], ["updated_at", "2020-02-17 16:33:41.923259"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Pray You Catch Me"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.930912"], ["updated_at", "2020-02-17 16:33:41.930912"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Hold Up"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.936510"], ["updated_at", "2020-02-17 16:33:41.936510"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Don't Hurt Yourself"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.942884"], ["updated_at", "2020-02-17 16:33:41.942884"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Sorry"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.947943"], ["updated_at", "2020-02-17 16:33:41.947943"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "6 Inch"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.953202"], ["updated_at", "2020-02-17 16:33:41.953202"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Daddy Lessons"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.958263"], ["updated_at", "2020-02-17 16:33:41.958263"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Love Drought"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.963246"], ["updated_at", "2020-02-17 16:33:41.963246"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Sandcastles"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.968750"], ["updated_at", "2020-02-17 16:33:41.968750"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Forward"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.973649"], ["updated_at", "2020-02-17 16:33:41.973649"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Freedom"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.978966"], ["updated_at", "2020-02-17 16:33:41.978966"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mAlbum Load (1.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "All Night"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.985515"], ["updated_at", "2020-02-17 16:33:41.985515"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Formation"], ["album_id", 4], ["created_at", "2020-02-17 16:33:41.990820"], ["updated_at", "2020-02-17 16:33:41.990820"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mFollow Load (0.9ms)[0m  [1m[34mSELECT "follows".* FROM "follows"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mLike Load (0.9ms)[0m  [1m[34mSELECT "likes".* FROM "likes"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.3ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 20]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 21]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 22]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 23]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 24]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 25]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 26]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAlbum Destroy (0.5ms)[0m  [1m[31mDELETE FROM "albums" WHERE "albums"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Album"], ["name", "album_cover"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mArtist Destroy (0.4ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "preferred_name", "DOB", "gender", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "guest@yahoo.com"], ["preferred_name", "Demo User"], ["DOB", "2008-11-19"], ["gender", "neutral"], ["password_digest", "$2a$12$xVbpeVMQSEmw9XHFC.hdz.XEZIxYOJDOAGO7/NT2MSpaBDUDx6m8m"], ["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["created_at", "2020-02-17 16:34:54.562211"], ["updated_at", "2020-02-17 16:34:54.562211"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("artist_name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_name", "Beyoncé"], ["bio", "One of the most success artists and \n                    music performers in modern history.\n                    A living legend."], ["created_at", "2020-02-17 16:34:54.567043"], ["updated_at", "2020-02-17 16:34:54.567043"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAlbum Create (0.7ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["album_name", "Lemonade"], ["artist_id", 5], ["created_at", "2020-02-17 16:34:54.577492"], ["updated_at", "2020-02-17 16:34:54.577492"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Pray You Catch Me"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.585739"], ["updated_at", "2020-02-17 16:34:54.585739"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Hold Up"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.590944"], ["updated_at", "2020-02-17 16:34:54.590944"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Don't Hurt Yourself"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.596270"], ["updated_at", "2020-02-17 16:34:54.596270"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Sorry"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.601339"], ["updated_at", "2020-02-17 16:34:54.601339"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "6 Inch"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.606747"], ["updated_at", "2020-02-17 16:34:54.606747"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Daddy Lessons"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.614421"], ["updated_at", "2020-02-17 16:34:54.614421"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Love Drought"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.618555"], ["updated_at", "2020-02-17 16:34:54.618555"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Sandcastles"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.623264"], ["updated_at", "2020-02-17 16:34:54.623264"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Forward"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.628359"], ["updated_at", "2020-02-17 16:34:54.628359"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Freedom"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.633292"], ["updated_at", "2020-02-17 16:34:54.633292"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "All Night"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.638556"], ["updated_at", "2020-02-17 16:34:54.638556"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Formation"], ["album_id", 5], ["created_at", "2020-02-17 16:34:54.643272"], ["updated_at", "2020-02-17 16:34:54.643272"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+[36m  S3 Storage (2391.9ms) [0m[32mUploaded file to key: VgKLD2xzQ7DBvjpf3oqwWt4P (checksum: 8EkgFWtPI50kz0KNBGZLBw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mActiveStorage::Blob Create (6.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "VgKLD2xzQ7DBvjpf3oqwWt4P"], ["filename", "01+Pray+You+Catch+Me.m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 7120564], ["checksum", "8EkgFWtPI50kz0KNBGZLBw=="], ["created_at", "2020-02-17 16:37:16.005437"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mActiveStorage::Attachment Create (9.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 27], ["blob_id", 1], ["created_at", "2020-02-17 16:37:16.039484"]]
+  ↳ db/seeds.rb:59
+  [1m[36mSong Update (3.5ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:37:16.050612"], ["id", 27]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:59
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7e41c3c-e454-43e7-8c84-0fe72d14dd96] Performing ActiveStorage::AnalyzeJob (Job ID: a7e41c3c-e454-43e7-8c84-0fe72d14dd96) from Inline(default) with arguments: #<GlobalID:0x00007f89dc85be80 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7e41c3c-e454-43e7-8c84-0fe72d14dd96]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7e41c3c-e454-43e7-8c84-0fe72d14dd96]   ↳ db/seeds.rb:59
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7e41c3c-e454-43e7-8c84-0fe72d14dd96]   [1m[36mActiveStorage::Blob Update (2.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7e41c3c-e454-43e7-8c84-0fe72d14dd96]   ↳ db/seeds.rb:59
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7e41c3c-e454-43e7-8c84-0fe72d14dd96]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7e41c3c-e454-43e7-8c84-0fe72d14dd96]   ↳ db/seeds.rb:59
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7e41c3c-e454-43e7-8c84-0fe72d14dd96] Performed ActiveStorage::AnalyzeJob (Job ID: a7e41c3c-e454-43e7-8c84-0fe72d14dd96) from Inline(default) in 13.63ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a7e41c3c-e454-43e7-8c84-0fe72d14dd96) to Inline(default) with arguments: #<GlobalID:0x00007f89d7f2cd18 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+[36m  S3 Storage (2614.0ms) [0m[32mUploaded file to key: nB619DxFmKtRK9X6rz7RmWaf (checksum: bz1s3pXHThK+eZY1ZPFw5w==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "nB619DxFmKtRK9X6rz7RmWaf"], ["filename", "02+Hold+Up.m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 7870672], ["checksum", "bz1s3pXHThK+eZY1ZPFw5w=="], ["created_at", "2020-02-17 16:37:18.771758"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 28], ["blob_id", 2], ["created_at", "2020-02-17 16:37:18.776372"]]
+  ↳ db/seeds.rb:60
+  [1m[36mSong Update (0.6ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:37:18.778744"], ["id", 28]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:60
+[ActiveJob] [ActiveStorage::AnalyzeJob] [94b3c5b1-a421-431a-b625-40f085c41ee2] Performing ActiveStorage::AnalyzeJob (Job ID: 94b3c5b1-a421-431a-b625-40f085c41ee2) from Inline(default) with arguments: #<GlobalID:0x00007f89db3e9d58 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [94b3c5b1-a421-431a-b625-40f085c41ee2]   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [94b3c5b1-a421-431a-b625-40f085c41ee2]   ↳ db/seeds.rb:60
+[ActiveJob] [ActiveStorage::AnalyzeJob] [94b3c5b1-a421-431a-b625-40f085c41ee2]   [1m[36mActiveStorage::Blob Update (1.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [94b3c5b1-a421-431a-b625-40f085c41ee2]   ↳ db/seeds.rb:60
+[ActiveJob] [ActiveStorage::AnalyzeJob] [94b3c5b1-a421-431a-b625-40f085c41ee2]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [94b3c5b1-a421-431a-b625-40f085c41ee2]   ↳ db/seeds.rb:60
+[ActiveJob] [ActiveStorage::AnalyzeJob] [94b3c5b1-a421-431a-b625-40f085c41ee2] Performed ActiveStorage::AnalyzeJob (Job ID: 94b3c5b1-a421-431a-b625-40f085c41ee2) from Inline(default) in 6.13ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 94b3c5b1-a421-431a-b625-40f085c41ee2) to Inline(default) with arguments: #<GlobalID:0x00007f89db3db460 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 29], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+[36m  S3 Storage (23517.4ms) [0m[32mUploaded file to key: uonMNXNvdrhBXFW8iEtp5SXP (checksum: nJptB6AspFWBadxD7gWE+g==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "uonMNXNvdrhBXFW8iEtp5SXP"], ["filename", "03+Don't+Hurt+Yourself+(feat.+Jack+White).m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 8291159], ["checksum", "nJptB6AspFWBadxD7gWE+g=="], ["created_at", "2020-02-17 16:37:42.354226"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 29], ["blob_id", 3], ["created_at", "2020-02-17 16:37:42.359786"]]
+  ↳ db/seeds.rb:61
+  [1m[36mSong Update (0.4ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:37:42.361377"], ["id", 29]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:61
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bb837ad-4169-4822-8dce-84665a770225] Performing ActiveStorage::AnalyzeJob (Job ID: 0bb837ad-4169-4822-8dce-84665a770225) from Inline(default) with arguments: #<GlobalID:0x00007f89d75e0ac0 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bb837ad-4169-4822-8dce-84665a770225]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bb837ad-4169-4822-8dce-84665a770225]   ↳ db/seeds.rb:61
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bb837ad-4169-4822-8dce-84665a770225]   [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bb837ad-4169-4822-8dce-84665a770225]   ↳ db/seeds.rb:61
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bb837ad-4169-4822-8dce-84665a770225]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bb837ad-4169-4822-8dce-84665a770225]   ↳ db/seeds.rb:61
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bb837ad-4169-4822-8dce-84665a770225] Performed ActiveStorage::AnalyzeJob (Job ID: 0bb837ad-4169-4822-8dce-84665a770225) from Inline(default) in 7.11ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0bb837ad-4169-4822-8dce-84665a770225) to Inline(default) with arguments: #<GlobalID:0x00007f89d768b448 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/3>>
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 30], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:62
+[36m  S3 Storage (4888.4ms) [0m[32mUploaded file to key: 7BC9t5nw8WrXZCEpWZRprLzQ (checksum: tUanDTWEfDVnRZ5B2unq5Q==)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[36mActiveStorage::Blob Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "7BC9t5nw8WrXZCEpWZRprLzQ"], ["filename", "04+Sorry.m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 8170848], ["checksum", "tUanDTWEfDVnRZ5B2unq5Q=="], ["created_at", "2020-02-17 16:37:47.320575"]]
+  ↳ db/seeds.rb:62
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 30], ["blob_id", 4], ["created_at", "2020-02-17 16:37:47.331851"]]
+  ↳ db/seeds.rb:62
+  [1m[36mSong Update (0.8ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:37:47.340034"], ["id", 30]]
+  ↳ db/seeds.rb:62
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:62
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27e9673e-ea49-4f4f-8f65-61019a7dba5c] Performing ActiveStorage::AnalyzeJob (Job ID: 27e9673e-ea49-4f4f-8f65-61019a7dba5c) from Inline(default) with arguments: #<GlobalID:0x00007f89d8a2b6b0 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27e9673e-ea49-4f4f-8f65-61019a7dba5c]   [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27e9673e-ea49-4f4f-8f65-61019a7dba5c]   ↳ db/seeds.rb:62
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27e9673e-ea49-4f4f-8f65-61019a7dba5c]   [1m[36mActiveStorage::Blob Update (2.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27e9673e-ea49-4f4f-8f65-61019a7dba5c]   ↳ db/seeds.rb:62
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27e9673e-ea49-4f4f-8f65-61019a7dba5c]   [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27e9673e-ea49-4f4f-8f65-61019a7dba5c]   ↳ db/seeds.rb:62
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27e9673e-ea49-4f4f-8f65-61019a7dba5c] Performed ActiveStorage::AnalyzeJob (Job ID: 27e9673e-ea49-4f4f-8f65-61019a7dba5c) from Inline(default) in 15.15ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 27e9673e-ea49-4f4f-8f65-61019a7dba5c) to Inline(default) with arguments: #<GlobalID:0x00007f89db40f2d8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/4>>
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 31], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:63
+[36m  S3 Storage (5988.5ms) [0m[32mUploaded file to key: 5rZW6wGo5rqyBsCHJsRBSts9 (checksum: AlZQzH8kG4lfvwZaJuJneA==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "5rZW6wGo5rqyBsCHJsRBSts9"], ["filename", "05+6+Inch+(feat.+The+Weeknd).m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 9183792], ["checksum", "AlZQzH8kG4lfvwZaJuJneA=="], ["created_at", "2020-02-17 16:37:53.523112"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[36mActiveStorage::Attachment Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 31], ["blob_id", 5], ["created_at", "2020-02-17 16:37:53.527656"]]
+  ↳ db/seeds.rb:63
+  [1m[36mSong Update (0.5ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:37:53.530293"], ["id", 31]]
+  ↳ db/seeds.rb:63
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:63
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:63
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3aafb3bf-5e19-4746-b851-12f0dbd70d1f] Performing ActiveStorage::AnalyzeJob (Job ID: 3aafb3bf-5e19-4746-b851-12f0dbd70d1f) from Inline(default) with arguments: #<GlobalID:0x00007f89d8991498 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3aafb3bf-5e19-4746-b851-12f0dbd70d1f]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3aafb3bf-5e19-4746-b851-12f0dbd70d1f]   ↳ db/seeds.rb:63
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3aafb3bf-5e19-4746-b851-12f0dbd70d1f]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3aafb3bf-5e19-4746-b851-12f0dbd70d1f]   ↳ db/seeds.rb:63
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3aafb3bf-5e19-4746-b851-12f0dbd70d1f]   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3aafb3bf-5e19-4746-b851-12f0dbd70d1f]   ↳ db/seeds.rb:63
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3aafb3bf-5e19-4746-b851-12f0dbd70d1f] Performed ActiveStorage::AnalyzeJob (Job ID: 3aafb3bf-5e19-4746-b851-12f0dbd70d1f) from Inline(default) in 4.62ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 3aafb3bf-5e19-4746-b851-12f0dbd70d1f) to Inline(default) with arguments: #<GlobalID:0x00007f89d86ac340 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/5>>
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 32], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+[36m  S3 Storage (11303.9ms) [0m[32mUploaded file to key: 4jPbWWn9C9n7DQYmSM6CuSK6 (checksum: gDSWn5iTTsHVM/Dc9yuUZw==)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "4jPbWWn9C9n7DQYmSM6CuSK6"], ["filename", "06+Daddy+Lessons.m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 10067780], ["checksum", "gDSWn5iTTsHVM/Dc9yuUZw=="], ["created_at", "2020-02-17 16:38:04.885897"]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mActiveStorage::Attachment Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 32], ["blob_id", 6], ["created_at", "2020-02-17 16:38:04.891273"]]
+  ↳ db/seeds.rb:64
+  [1m[36mSong Update (3.3ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:38:04.893760"], ["id", 32]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:64
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4aac0d36-9107-4990-93b5-dc824526f34e] Performing ActiveStorage::AnalyzeJob (Job ID: 4aac0d36-9107-4990-93b5-dc824526f34e) from Inline(default) with arguments: #<GlobalID:0x00007f89d7708678 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4aac0d36-9107-4990-93b5-dc824526f34e]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4aac0d36-9107-4990-93b5-dc824526f34e]   ↳ db/seeds.rb:64
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4aac0d36-9107-4990-93b5-dc824526f34e]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4aac0d36-9107-4990-93b5-dc824526f34e]   ↳ db/seeds.rb:64
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4aac0d36-9107-4990-93b5-dc824526f34e]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4aac0d36-9107-4990-93b5-dc824526f34e]   ↳ db/seeds.rb:64
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4aac0d36-9107-4990-93b5-dc824526f34e] Performed ActiveStorage::AnalyzeJob (Job ID: 4aac0d36-9107-4990-93b5-dc824526f34e) from Inline(default) in 5.07ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 4aac0d36-9107-4990-93b5-dc824526f34e) to Inline(default) with arguments: #<GlobalID:0x00007f89d7bd37c0 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/6>>
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 33], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+[36m  S3 Storage (13363.0ms) [0m[32mUploaded file to key: ymNQmMQaBvZ7UHjZbnjWMnk9 (checksum: uuFw36Yn7tMxndcYF+qi/g==)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "ymNQmMQaBvZ7UHjZbnjWMnk9"], ["filename", "07+Love+Drought.m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 8488651], ["checksum", "uuFw36Yn7tMxndcYF+qi/g=="], ["created_at", "2020-02-17 16:38:18.315447"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mActiveStorage::Attachment Create (3.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 33], ["blob_id", 7], ["created_at", "2020-02-17 16:38:18.320656"]]
+  ↳ db/seeds.rb:65
+  [1m[36mSong Update (4.2ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:38:18.327415"], ["id", 33]]
+  ↳ db/seeds.rb:65
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (6.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:65
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2a508674-90a2-42a0-9653-e935995135eb] Performing ActiveStorage::AnalyzeJob (Job ID: 2a508674-90a2-42a0-9653-e935995135eb) from Inline(default) with arguments: #<GlobalID:0x00007f89d7db8c70 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2a508674-90a2-42a0-9653-e935995135eb]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2a508674-90a2-42a0-9653-e935995135eb]   ↳ db/seeds.rb:65
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2a508674-90a2-42a0-9653-e935995135eb]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2a508674-90a2-42a0-9653-e935995135eb]   ↳ db/seeds.rb:65
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2a508674-90a2-42a0-9653-e935995135eb]   [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2a508674-90a2-42a0-9653-e935995135eb]   ↳ db/seeds.rb:65
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2a508674-90a2-42a0-9653-e935995135eb] Performed ActiveStorage::AnalyzeJob (Job ID: 2a508674-90a2-42a0-9653-e935995135eb) from Inline(default) in 8.06ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 2a508674-90a2-42a0-9653-e935995135eb) to Inline(default) with arguments: #<GlobalID:0x00007f89db1dc588 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/7>>
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 34], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+[36m  S3 Storage (10289.8ms) [0m[32mUploaded file to key: J2w15XXUfZe7prjahNHtWfQp (checksum: nqP9ZWSKP4sMwVSRAqqUQw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:66
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "J2w15XXUfZe7prjahNHtWfQp"], ["filename", "08+Sandcastles.m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 6601930], ["checksum", "nqP9ZWSKP4sMwVSRAqqUQw=="], ["created_at", "2020-02-17 16:38:28.683709"]]
+  ↳ db/seeds.rb:66
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:66
+  [1m[36mActiveStorage::Attachment Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 34], ["blob_id", 8], ["created_at", "2020-02-17 16:38:28.690475"]]
+  ↳ db/seeds.rb:66
+  [1m[36mSong Update (0.6ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:38:28.692651"], ["id", 34]]
+  ↳ db/seeds.rb:66
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:66
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:66
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f14b92fb-5d71-47a0-b7ad-784355d35dfb] Performing ActiveStorage::AnalyzeJob (Job ID: f14b92fb-5d71-47a0-b7ad-784355d35dfb) from Inline(default) with arguments: #<GlobalID:0x00007f89d740b0d8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f14b92fb-5d71-47a0-b7ad-784355d35dfb]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f14b92fb-5d71-47a0-b7ad-784355d35dfb]   ↳ db/seeds.rb:66
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f14b92fb-5d71-47a0-b7ad-784355d35dfb]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 8]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f14b92fb-5d71-47a0-b7ad-784355d35dfb]   ↳ db/seeds.rb:66
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f14b92fb-5d71-47a0-b7ad-784355d35dfb]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f14b92fb-5d71-47a0-b7ad-784355d35dfb]   ↳ db/seeds.rb:66
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f14b92fb-5d71-47a0-b7ad-784355d35dfb] Performed ActiveStorage::AnalyzeJob (Job ID: f14b92fb-5d71-47a0-b7ad-784355d35dfb) from Inline(default) in 11.86ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: f14b92fb-5d71-47a0-b7ad-784355d35dfb) to Inline(default) with arguments: #<GlobalID:0x00007f89d74f05c0 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/8>>
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 35], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+[36m  S3 Storage (4970.3ms) [0m[32mUploaded file to key: QXJBTuEv7EPNrmpfgGPJT2k2 (checksum: amYTW/AaiR4F2IeZVwgYsw==)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:67
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "QXJBTuEv7EPNrmpfgGPJT2k2"], ["filename", "09+Forward+(feat.+James+Blake).m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 3220879], ["checksum", "amYTW/AaiR4F2IeZVwgYsw=="], ["created_at", "2020-02-17 16:38:33.801451"]]
+  ↳ db/seeds.rb:67
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:67
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 35], ["blob_id", 9], ["created_at", "2020-02-17 16:38:33.806468"]]
+  ↳ db/seeds.rb:67
+  [1m[36mSong Update (0.4ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:38:33.808069"], ["id", 35]]
+  ↳ db/seeds.rb:67
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:67
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:67
+[ActiveJob] [ActiveStorage::AnalyzeJob] [394ddb94-3f94-45ac-903f-6dd29ab82c0a] Performing ActiveStorage::AnalyzeJob (Job ID: 394ddb94-3f94-45ac-903f-6dd29ab82c0a) from Inline(default) with arguments: #<GlobalID:0x00007f89d7bb2ca0 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [394ddb94-3f94-45ac-903f-6dd29ab82c0a]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [394ddb94-3f94-45ac-903f-6dd29ab82c0a]   ↳ db/seeds.rb:67
+[ActiveJob] [ActiveStorage::AnalyzeJob] [394ddb94-3f94-45ac-903f-6dd29ab82c0a]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [394ddb94-3f94-45ac-903f-6dd29ab82c0a]   ↳ db/seeds.rb:67
+[ActiveJob] [ActiveStorage::AnalyzeJob] [394ddb94-3f94-45ac-903f-6dd29ab82c0a]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [394ddb94-3f94-45ac-903f-6dd29ab82c0a]   ↳ db/seeds.rb:67
+[ActiveJob] [ActiveStorage::AnalyzeJob] [394ddb94-3f94-45ac-903f-6dd29ab82c0a] Performed ActiveStorage::AnalyzeJob (Job ID: 394ddb94-3f94-45ac-903f-6dd29ab82c0a) from Inline(default) in 4.74ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 394ddb94-3f94-45ac-903f-6dd29ab82c0a) to Inline(default) with arguments: #<GlobalID:0x00007f89d7bde6c0 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/9>>
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 36], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+[36m  S3 Storage (15986.7ms) [0m[32mUploaded file to key: WWrmGikBCfsKmFapN4WaA7KL (checksum: gaUOHCJeNk/tW8aeHXqFFA==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "WWrmGikBCfsKmFapN4WaA7KL"], ["filename", "10+Freedom+(feat.+Kendrick+Lamar).m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 10226320], ["checksum", "gaUOHCJeNk/tW8aeHXqFFA=="], ["created_at", "2020-02-17 16:38:49.847342"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[36mActiveStorage::Attachment Create (2.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 36], ["blob_id", 10], ["created_at", "2020-02-17 16:38:49.853941"]]
+  ↳ db/seeds.rb:68
+  [1m[36mSong Update (0.7ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:38:49.857795"], ["id", 36]]
+  ↳ db/seeds.rb:68
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:68
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:68
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e] Performing ActiveStorage::AnalyzeJob (Job ID: d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e) from Inline(default) with arguments: #<GlobalID:0x00007f89db1cfd60 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/10>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e]   ↳ db/seeds.rb:68
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 10]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e]   ↳ db/seeds.rb:68
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e]   [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e]   ↳ db/seeds.rb:68
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e] Performed ActiveStorage::AnalyzeJob (Job ID: d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e) from Inline(default) in 8.88ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d5aef6c7-97eb-49ae-9499-fbe0ac3eb47e) to Inline(default) with arguments: #<GlobalID:0x00007f89db21d830 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/10>>
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 37], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+[36m  S3 Storage (17373.9ms) [0m[32mUploaded file to key: 4rpnxuJczUSxgxLfSCnJoWG9 (checksum: fWmkr4nyULQnirZRO7i35A==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "4rpnxuJczUSxgxLfSCnJoWG9"], ["filename", "11+All+Night.m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 11161620], ["checksum", "fWmkr4nyULQnirZRO7i35A=="], ["created_at", "2020-02-17 16:39:07.398584"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 37], ["blob_id", 11], ["created_at", "2020-02-17 16:39:07.403093"]]
+  ↳ db/seeds.rb:69
+  [1m[36mSong Update (0.5ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:39:07.404827"], ["id", 37]]
+  ↳ db/seeds.rb:69
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:69
+[ActiveJob] [ActiveStorage::AnalyzeJob] [047fea48-27c5-4f09-b0dc-7071ac504f63] Performing ActiveStorage::AnalyzeJob (Job ID: 047fea48-27c5-4f09-b0dc-7071ac504f63) from Inline(default) with arguments: #<GlobalID:0x00007f89d7f553f8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/11>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [047fea48-27c5-4f09-b0dc-7071ac504f63]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [047fea48-27c5-4f09-b0dc-7071ac504f63]   ↳ db/seeds.rb:69
+[ActiveJob] [ActiveStorage::AnalyzeJob] [047fea48-27c5-4f09-b0dc-7071ac504f63]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 11]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [047fea48-27c5-4f09-b0dc-7071ac504f63]   ↳ db/seeds.rb:69
+[ActiveJob] [ActiveStorage::AnalyzeJob] [047fea48-27c5-4f09-b0dc-7071ac504f63]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [047fea48-27c5-4f09-b0dc-7071ac504f63]   ↳ db/seeds.rb:69
+[ActiveJob] [ActiveStorage::AnalyzeJob] [047fea48-27c5-4f09-b0dc-7071ac504f63] Performed ActiveStorage::AnalyzeJob (Job ID: 047fea48-27c5-4f09-b0dc-7071ac504f63) from Inline(default) in 4.58ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 047fea48-27c5-4f09-b0dc-7071ac504f63) to Inline(default) with arguments: #<GlobalID:0x00007f89db4940f0 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/11>>
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 38], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:70
+[36m  S3 Storage (11615.5ms) [0m[32mUploaded file to key: avL4gLktNCYHzFV7SS4iQidD (checksum: hFoQ2+B6zNljESSJfydokg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "avL4gLktNCYHzFV7SS4iQidD"], ["filename", "12+Formation.m4a"], ["content_type", "audio/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 7447020], ["checksum", "hFoQ2+B6zNljESSJfydokg=="], ["created_at", "2020-02-17 16:39:19.070188"]]
+  ↳ db/seeds.rb:70
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track"], ["record_type", "Song"], ["record_id", 38], ["blob_id", 12], ["created_at", "2020-02-17 16:39:19.076363"]]
+  ↳ db/seeds.rb:70
+  [1m[36mSong Update (0.5ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2020-02-17 16:39:19.078140"], ["id", 38]]
+  ↳ db/seeds.rb:70
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:70
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e0b7f5f-4b6a-4bb3-95cc-bf652add494e] Performing ActiveStorage::AnalyzeJob (Job ID: 9e0b7f5f-4b6a-4bb3-95cc-bf652add494e) from Inline(default) with arguments: #<GlobalID:0x00007f89d7f94af8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/12>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e0b7f5f-4b6a-4bb3-95cc-bf652add494e]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e0b7f5f-4b6a-4bb3-95cc-bf652add494e]   ↳ db/seeds.rb:70
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e0b7f5f-4b6a-4bb3-95cc-bf652add494e]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 12]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e0b7f5f-4b6a-4bb3-95cc-bf652add494e]   ↳ db/seeds.rb:70
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e0b7f5f-4b6a-4bb3-95cc-bf652add494e]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e0b7f5f-4b6a-4bb3-95cc-bf652add494e]   ↳ db/seeds.rb:70
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e0b7f5f-4b6a-4bb3-95cc-bf652add494e] Performed ActiveStorage::AnalyzeJob (Job ID: 9e0b7f5f-4b6a-4bb3-95cc-bf652add494e) from Inline(default) in 5.3ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9e0b7f5f-4b6a-4bb3-95cc-bf652add494e) to Inline(default) with arguments: #<GlobalID:0x00007f89d8a99958 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/12>>
+  [1m[36mSong Load (1.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (3.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-02-17 13:35:08 -0500
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Jay/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (95.5ms)
+Completed 200 OK in 4084ms (Views: 4052.3ms | ActiveRecord: 27.1ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:36:02 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 170ms (Views: 163.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:37:05 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 311ms (Views: 304.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:37:43 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 191ms (Views: 185.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:38:06 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 275ms (Views: 264.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:40:36 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 319ms (Views: 310.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:42:13 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 285ms (Views: 280.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:42:33 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 439ms (Views: 434.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:43:25 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 880ms (Views: 872.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:43:28 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 101ms (Views: 95.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:45:26 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 340ms (Views: 333.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:53:41 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 1052ms (Views: 1041.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:55:25 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 1180ms (Views: 1162.1ms | ActiveRecord: 9.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-02-17 13:55:29 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-w4z1rSWRL_MSs93x5gkVA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "RsOEYmvYx3Ej9uFztIQFMQ"], ["updated_at", "2020-02-17 18:55:29.125583"], ["id", 6]]
+  ↳ app/models/user.rb:42
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 18ms (Views: 0.8ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-17 13:55:31 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.7ms)
+Completed 200 OK in 351ms (Views: 36.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:56:20 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RsOEYmvYx3Ej9uFztIQFMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 330ms (Views: 320.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:56:40 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RsOEYmvYx3Ej9uFztIQFMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 363ms (Views: 343.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:57:10 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RsOEYmvYx3Ej9uFztIQFMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 373ms (Views: 356.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:57:23 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RsOEYmvYx3Ej9uFztIQFMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 261ms (Views: 247.0ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:57:34 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RsOEYmvYx3Ej9uFztIQFMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 284ms (Views: 270.1ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 13:58:55 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RsOEYmvYx3Ej9uFztIQFMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 191ms (Views: 183.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:00:47 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RsOEYmvYx3Ej9uFztIQFMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 305ms (Views: 296.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:01:11 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RsOEYmvYx3Ej9uFztIQFMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 456ms (Views: 449.4ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-02-17 14:01:28 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RsOEYmvYx3Ej9uFztIQFMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["updated_at", "2020-02-17 19:01:28.044884"], ["id", 6]]
+  ↳ app/models/user.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-17 14:01:29 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (3.3ms)
+Completed 200 OK in 324ms (Views: 14.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:02:08 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 294ms (Views: 289.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:02:26 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 167ms (Views: 147.4ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:02:51 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 323ms (Views: 316.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:03:07 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 290ms (Views: 282.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:03:29 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 195ms (Views: 187.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:04:40 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (3.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 331ms (Views: 320.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:05:07 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 307ms (Views: 289.4ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:07:02 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (24.0ms)
+Completed 500 Internal Server Error in 255ms (ActiveRecord: 0.5ms)
+
+
+
+Sass::SyntaxError - Invalid CSS after "    font-size": expected ";", was ": 2em;":
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3165048572189835071_70250052629400'
+
+Started POST "/__better_errors/61b9056986a96e1d/variables" for ::1 at 2020-02-17 14:07:03 -0500
+Started GET "/" for ::1 at 2020-02-17 14:07:11 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 668ms (Views: 662.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:08:50 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 330ms (Views: 320.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:10:07 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 415ms (Views: 403.0ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:12:17 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 335ms (Views: 324.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-02-17 14:12:25 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YXkiCc5I-v_Kf2a5sd9L3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (2.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "z6ZDWBm95nKYprsvz5vYTw"], ["updated_at", "2020-02-17 19:12:25.627182"], ["id", 6]]
+  ↳ app/models/user.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-17 14:12:28 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (3.4ms)
+Completed 200 OK in 322ms (Views: 13.9ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-02-17 14:12:30 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6ZDWBm95nKYprsvz5vYTw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "9ETjmhbbAyC0UdE-KlPHDg"], ["updated_at", "2020-02-17 19:12:30.728156"], ["id", 6]]
+  ↳ app/models/user.rb:42
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-17 14:12:33 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 310ms (Views: 12.6ms | ActiveRecord: 2.2ms)
+
+

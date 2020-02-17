@@ -11,7 +11,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        logout: () => dispatch(logout)
+        logout: () => dispatch(logout())
     }
 }
 

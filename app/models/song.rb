@@ -13,5 +13,5 @@ class Song < ApplicationRecord
     belongs_to :album
     has_one :artist, through: :album
     has_many :likes, as: :likeable
-    has_one_attached :song
+    has_one_attached :track
 end
