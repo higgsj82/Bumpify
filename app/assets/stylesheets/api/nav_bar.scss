@@ -1,0 +1,95 @@
+.nav-bar-div {
+    width: 230px;
+    left: 0;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    flex-grow: 1;
+    padding-top: 24px;
+}
+
+.nav-logo-div {
+    width: 151px;
+    height: 50px;
+    padding: 0 0 18px 24px;
+}
+
+.nav-link-divs {
+    display: block;
+    position: relative;
+    border: 4px solid transparent;
+    border-radius: 4px;
+}
+
+.nav-links {
+    height: 40px;
+    color: #B3B3B3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.nav-links  i {
+    font-size: 1.8em;
+}
+
+.nav-links p {
+    margin-left: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
+}
+
+.playlist-main-div {
+    height: 140px;
+    margin-top: 24px;
+}
+
+.playlist-div h1 {
+    color: #B3B3B3;
+    font-size: 11px;
+    text-transform: uppercase;
+    line-height: 16px;
+    letter-spacing: .16em;
+    padding: 0 24px 12px;
+    font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
+}
+
+.create-playlist-div {
+    height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.create-playlist-button {
+    color: #B3B3B3;
+    padding: 5px 24px;
+    display: flex;
+    align-items: center;
+}
+
+.create-playlist-button i {
+    font-size: 2.5em;
+    margin-right: 16px;
+    padding: 4px;
+}
+
+.create-playlist-button span {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.current-album-div {
+    bottom: 90px;
+    height: 236px;
+}
+
+.current-album {
+    height: 100%;
+}

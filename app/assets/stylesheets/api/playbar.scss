@@ -1,0 +1,108 @@
+.main-page-div {
+    position: relative;
+}
+
+.main-page-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 90px;
+    display: flex;
+}
+
+.play-bar {
+    width: 100%;
+    background-color: #282828;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.current-song-div {
+    width: 20%;
+    height: 56px;
+    display: inline;
+    align-items: center;
+    flex-direction: column;
+    font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #ffffff;
+}
+.current-song {
+    display: flex;
+    margin-bottom: 10px;
+
+}
+
+.current-song i {
+    padding-left: 8px;
+}
+
+
+.player-controlls-div {
+    width: 50%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.play-buttons-div {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    // padding-bottom: 10px;
+    // align-items: stretch;
+}
+
+.play-buttons {
+    color: #C0C0C0;
+    font-size: 1.5em;
+    // padding-bottom: 10px;
+}
+
+.arrows {
+    font-size: 2em;
+}
+
+.play-buttons:hover {
+    color: #ffffff;
+}
+
+.play-button-div {
+    display: flex;
+    height: 46px;
+    width: 46px;
+    align-items: center;
+    // padding-bottom: 10px;
+}
+
+.play-button-div button {
+    margin: auto;
+    font-size: 3em;
+}
+
+.play-button-div button:hover {
+    font-size: 3.1em;
+}
+
+.volume-controlls-div {
+    background-color: blueviolet;
+    width: 20%;
+    height: 32px;
+    align-items: center;
+}
+
+progress {
+    width: 400px;
+    margin-top: 2px;
+    padding-top: 10px;
+    color: #C0C0C0;
+}
+
+// progress[value]::-webkit-progress-bar {
+//   background-color: #eee;
+// }
+
