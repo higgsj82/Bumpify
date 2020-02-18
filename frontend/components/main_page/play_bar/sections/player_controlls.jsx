@@ -5,9 +5,27 @@ class PlayerControlls extends React.Component {
         super(props);
     }
 
+    play() {
+        this.props.song.track.play()
+    }
+
+    pause() {
+
+    }
+
+    shuffle() {
+
+    }
+
+    repeat() {
+        
+    }
+    
+
     render() {
         return (
             <div className="player-controlls-div">
+                <audio controls src="https://bumpify-dev.s3.amazonaws.com/02+Hold+Up.m4a" itemType="audio/mpeg"></audio>
                 <div className="play-buttons-div">
                     <button className="play-buttons">
                         <i className="fas fa-random"></i>

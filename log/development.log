@@ -12809,3 +12809,1017 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 336ms (Views: 323.9ms | ActiveRecord: 2.3ms)
 
 
+Started DELETE "/api/session" for ::1 at 2020-02-17 14:28:30 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9ETjmhbbAyC0UdE-KlPHDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["updated_at", "2020-02-17 19:28:30.152737"], ["id", 6]]
+  ↳ app/models/user.rb:42
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 56ms (Views: 0.3ms | ActiveRecord: 20.9ms)
+
+
+Started POST "/api/users" for ::1 at 2020-02-17 14:28:41 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "confirmEmail"=>"", "password"=>"[FILTERED]", "preferred_name"=>"", "DOB"=>"0", "gender"=>"", "month"=>"", "day"=>"0", "year"=>""}}
+Unpermitted parameters: :confirmEmail, :month, :day, :year
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 401 Unauthorized in 335ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:28:46 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 169ms (Views: 161.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-17 14:28:51 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (7.3ms)
+Completed 200 OK in 351ms (Views: 23.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:32:51 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 397ms (Views: 389.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:33:02 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 353ms (Views: 347.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:33:06 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 109ms (Views: 100.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:33:19 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 299ms (Views: 286.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:33:40 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 340ms (Views: 328.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:33:50 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 331ms (Views: 324.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:34:41 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 301ms (Views: 294.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:34:59 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 338ms (Views: 329.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:35:35 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 401ms (Views: 394.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:35:52 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 268ms (Views: 263.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:36:25 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 531ms (Views: 512.4ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:36:48 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (59.2ms)
+Completed 200 OK in 340ms (Views: 334.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:37:03 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 339ms (Views: 331.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:40:58 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 367ms (Views: 359.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:41:50 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 332ms (Views: 314.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 14:42:31 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 302ms (Views: 296.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 16:25:06 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (16.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (353.3ms)
+Completed 200 OK in 4307ms (Views: 4263.8ms | ActiveRecord: 34.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 16:36:33 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (54.3ms)
+Completed 200 OK in 1450ms (Views: 1438.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 16:36:55 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 811ms (Views: 806.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 17:00:34 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (5.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 924ms (Views: 916.8ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-02-17 17:01:43 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3dyhclfY3KIso9k0WP3EeA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Hr_ZGs4RGXMozzxZ-AVPiQ"], ["updated_at", "2020-02-17 22:01:43.959580"], ["id", 6]]
+  ↳ app/models/user.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 22ms (Views: 1.9ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-17 17:01:48 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (3.5ms)
+Completed 200 OK in 307ms (Views: 14.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-02-17 17:24:07 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Hr_ZGs4RGXMozzxZ-AVPiQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YL5tMQ_gLlivYRxB6uT8vA"], ["updated_at", "2020-02-17 22:24:08.189068"], ["id", 6]]
+  ↳ app/models/user.rb:42
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 111ms (Views: 0.6ms | ActiveRecord: 59.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-17 17:25:11 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (2.7ms)
+  Rendered api/users/show.json.jbuilder (6.9ms)
+Completed 200 OK in 932ms (Views: 24.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 17:39:02 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YL5tMQ_gLlivYRxB6uT8vA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (16.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 2732ms (Views: 2710.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 17:40:51 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YL5tMQ_gLlivYRxB6uT8vA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 1027ms (Views: 1017.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 17:40:57 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YL5tMQ_gLlivYRxB6uT8vA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 192ms (Views: 187.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 17:42:01 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YL5tMQ_gLlivYRxB6uT8vA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 1098ms (Views: 1086.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 17:42:22 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YL5tMQ_gLlivYRxB6uT8vA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 426ms (Views: 421.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 17:49:03 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YL5tMQ_gLlivYRxB6uT8vA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (5.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (59.3ms)
+Completed 200 OK in 1340ms (Views: 1325.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-17 17:49:37 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YL5tMQ_gLlivYRxB6uT8vA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 524ms (Views: 517.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-02-17 17:53:31 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YL5tMQ_gLlivYRxB6uT8vA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (2.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Zr3Mn4WL5EorFclz45l-eQ"], ["updated_at", "2020-02-17 22:53:31.993363"], ["id", 6]]
+  ↳ app/models/user.rb:42
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 26ms (Views: 0.8ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-17 17:53:34 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered api/users/show.json.jbuilder (6.2ms)
+Completed 200 OK in 315ms (Views: 20.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-18 09:50:31 -0500
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Jay/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zr3Mn4WL5EorFclz45l-eQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (105.9ms)
+Completed 200 OK in 4730ms (Views: 4698.7ms | ActiveRecord: 27.1ms)
+
+
+Started GET "/" for ::1 at 2020-02-18 09:51:54 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zr3Mn4WL5EorFclz45l-eQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 208ms (Views: 197.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-02-18 10:07:57 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zr3Mn4WL5EorFclz45l-eQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (9.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "SCmNIcjd-OFjtKpOo95ZJw"], ["updated_at", "2020-02-18 15:07:57.484240"], ["id", 6]]
+  ↳ app/models/user.rb:42
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 31ms (Views: 0.3ms | ActiveRecord: 16.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-18 10:08:04 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (3.3ms)
+Completed 200 OK in 319ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mFollow Load (7.5ms)[0m  [1m[34mSELECT "follows".* FROM "follows"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mLike Load (2.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSong Load (5.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (8.9ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 27]]
+  ↳ db/seeds.rb:11
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (5.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797] Performing ActiveStorage::PurgeJob (Job ID: 7f3abc50-8a35-4563-874b-222a46713797) from Inline(default) with arguments: #<GlobalID:0x00007f9b88225828 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797]   [1m[36mActiveStorage::Attachment Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797]   [1m[36mActiveStorage::Blob Destroy (12.9ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797] [36m  S3 Storage (234.7ms) [0m[31mDeleted file from key: VgKLD2xzQ7DBvjpf3oqwWt4P[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7f3abc50-8a35-4563-874b-222a46713797] Performed ActiveStorage::PurgeJob (Job ID: 7f3abc50-8a35-4563-874b-222a46713797) from Inline(default) in 277.75ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 7f3abc50-8a35-4563-874b-222a46713797) to Inline(default) with arguments: #<GlobalID:0x00007f9b82fd7558 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/1>>
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 28]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a] Performing ActiveStorage::PurgeJob (Job ID: b608df44-dba7-42ed-af4e-c0cbb492799a) from Inline(default) with arguments: #<GlobalID:0x00007f9b88244c50 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a]   [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a] [36m  S3 Storage (62.4ms) [0m[31mDeleted file from key: nB619DxFmKtRK9X6rz7RmWaf[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b608df44-dba7-42ed-af4e-c0cbb492799a] Performed ActiveStorage::PurgeJob (Job ID: b608df44-dba7-42ed-af4e-c0cbb492799a) from Inline(default) in 71.0ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: b608df44-dba7-42ed-af4e-c0cbb492799a) to Inline(default) with arguments: #<GlobalID:0x00007f9b8703fca8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/2>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 29]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 29], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56] Performing ActiveStorage::PurgeJob (Job ID: 39c4f0c7-d6b5-4950-a909-5ef41189db56) from Inline(default) with arguments: #<GlobalID:0x00007f9b835da130 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56]   [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56]   [1m[36mActiveStorage::Blob Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 3]]
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56]   [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56] [36m  S3 Storage (52.4ms) [0m[31mDeleted file from key: uonMNXNvdrhBXFW8iEtp5SXP[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [39c4f0c7-d6b5-4950-a909-5ef41189db56] Performed ActiveStorage::PurgeJob (Job ID: 39c4f0c7-d6b5-4950-a909-5ef41189db56) from Inline(default) in 61.58ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 39c4f0c7-d6b5-4950-a909-5ef41189db56) to Inline(default) with arguments: #<GlobalID:0x00007f9b83fc3610 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/3>>
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 30]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 30], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438] Performing ActiveStorage::PurgeJob (Job ID: 82cfc178-ff38-4c25-b9bb-47490e622438) from Inline(default) with arguments: #<GlobalID:0x00007f9b82efe5c8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438]   [1m[36mActiveStorage::Attachment Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438]   [1m[36mActiveStorage::Blob Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438] [36m  S3 Storage (52.1ms) [0m[31mDeleted file from key: 7BC9t5nw8WrXZCEpWZRprLzQ[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [82cfc178-ff38-4c25-b9bb-47490e622438] Performed ActiveStorage::PurgeJob (Job ID: 82cfc178-ff38-4c25-b9bb-47490e622438) from Inline(default) in 62.55ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 82cfc178-ff38-4c25-b9bb-47490e622438) to Inline(default) with arguments: #<GlobalID:0x00007f9b83f22508 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/4>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 31]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 31], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890] Performing ActiveStorage::PurgeJob (Job ID: 27c18046-b3db-44cd-9826-2e5771b7f890) from Inline(default) with arguments: #<GlobalID:0x00007f9b834efbf8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 5]]
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890]   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890] [36m  S3 Storage (57.6ms) [0m[31mDeleted file from key: 5rZW6wGo5rqyBsCHJsRBSts9[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [27c18046-b3db-44cd-9826-2e5771b7f890] Performed ActiveStorage::PurgeJob (Job ID: 27c18046-b3db-44cd-9826-2e5771b7f890) from Inline(default) in 65.6ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 27c18046-b3db-44cd-9826-2e5771b7f890) to Inline(default) with arguments: #<GlobalID:0x00007f9b82e5d2b8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/5>>
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 32]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 32], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194] Performing ActiveStorage::PurgeJob (Job ID: e33ec341-2c47-4d1f-8db2-b328e1284194) from Inline(default) with arguments: #<GlobalID:0x00007f9b833d8530 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194]   [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 6]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194] [36m  S3 Storage (48.0ms) [0m[31mDeleted file from key: 4jPbWWn9C9n7DQYmSM6CuSK6[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e33ec341-2c47-4d1f-8db2-b328e1284194] Performed ActiveStorage::PurgeJob (Job ID: e33ec341-2c47-4d1f-8db2-b328e1284194) from Inline(default) in 55.98ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: e33ec341-2c47-4d1f-8db2-b328e1284194) to Inline(default) with arguments: #<GlobalID:0x00007f9b82e2d220 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/6>>
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 33]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 33], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a] Performing ActiveStorage::PurgeJob (Job ID: 2a551f8c-648b-4735-b318-5eb3c2a9988a) from Inline(default) with arguments: #<GlobalID:0x00007f9b83dd94d0 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 7], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 7]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a]   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a] [36m  S3 Storage (60.6ms) [0m[31mDeleted file from key: ymNQmMQaBvZ7UHjZbnjWMnk9[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2a551f8c-648b-4735-b318-5eb3c2a9988a] Performed ActiveStorage::PurgeJob (Job ID: 2a551f8c-648b-4735-b318-5eb3c2a9988a) from Inline(default) in 68.56ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 2a551f8c-648b-4735-b318-5eb3c2a9988a) to Inline(default) with arguments: #<GlobalID:0x00007f9b83d7b998 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/7>>
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (1.9ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 34]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 34], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5] Performing ActiveStorage::PurgeJob (Job ID: b3da4850-5549-464b-aa4d-3d3638c36ed5) from Inline(default) with arguments: #<GlobalID:0x00007f9b83d29f80 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5]   [1m[36mActiveStorage::Attachment Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 8], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5]   [1m[36mActiveStorage::Blob Destroy (1.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 8]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5] [36m  S3 Storage (62.8ms) [0m[31mDeleted file from key: J2w15XXUfZe7prjahNHtWfQp[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b3da4850-5549-464b-aa4d-3d3638c36ed5] Performed ActiveStorage::PurgeJob (Job ID: b3da4850-5549-464b-aa4d-3d3638c36ed5) from Inline(default) in 74.01ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: b3da4850-5549-464b-aa4d-3d3638c36ed5) to Inline(default) with arguments: #<GlobalID:0x00007f9b83bc2e58 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/8>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 35]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 35], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480] Performing ActiveStorage::PurgeJob (Job ID: 8d031723-b7ba-4f77-a1a3-53be7fc75480) from Inline(default) with arguments: #<GlobalID:0x00007f9b8315bf00 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480]   [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 9], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480]   [1m[36mActiveStorage::Blob Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 9]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480] [36m  S3 Storage (47.4ms) [0m[31mDeleted file from key: QXJBTuEv7EPNrmpfgGPJT2k2[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8d031723-b7ba-4f77-a1a3-53be7fc75480] Performed ActiveStorage::PurgeJob (Job ID: 8d031723-b7ba-4f77-a1a3-53be7fc75480) from Inline(default) in 62.28ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 8d031723-b7ba-4f77-a1a3-53be7fc75480) to Inline(default) with arguments: #<GlobalID:0x00007f9b837c99c8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/9>>
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 36]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 36], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f] Performing ActiveStorage::PurgeJob (Job ID: 71808283-df89-4fba-8310-3d79c2cc235f) from Inline(default) with arguments: #<GlobalID:0x00007f9b837b2b38 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/10>>
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f]   [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 10], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 10]]
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f] [36m  S3 Storage (45.9ms) [0m[31mDeleted file from key: WWrmGikBCfsKmFapN4WaA7KL[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [71808283-df89-4fba-8310-3d79c2cc235f] Performed ActiveStorage::PurgeJob (Job ID: 71808283-df89-4fba-8310-3d79c2cc235f) from Inline(default) in 54.57ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 71808283-df89-4fba-8310-3d79c2cc235f) to Inline(default) with arguments: #<GlobalID:0x00007f9b88225a30 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/10>>
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 37]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 37], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e] Performing ActiveStorage::PurgeJob (Job ID: b20c8a52-5e3d-4691-9201-82d228a2233e) from Inline(default) with arguments: #<GlobalID:0x00007f9b843424d0 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/11>>
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e]   [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 11]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e]   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e] [36m  S3 Storage (50.0ms) [0m[31mDeleted file from key: 4rpnxuJczUSxgxLfSCnJoWG9[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b20c8a52-5e3d-4691-9201-82d228a2233e] Performed ActiveStorage::PurgeJob (Job ID: b20c8a52-5e3d-4691-9201-82d228a2233e) from Inline(default) in 57.88ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: b20c8a52-5e3d-4691-9201-82d228a2233e) to Inline(default) with arguments: #<GlobalID:0x00007f9b837691b8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/11>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 38]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 38], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12] Performing ActiveStorage::PurgeJob (Job ID: ab9542fd-3ea0-419d-8a37-eb1648a49a12) from Inline(default) with arguments: #<GlobalID:0x00007f9b881d82f8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/12>>
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12]   [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 12], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 12]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12]   ↳ db/seeds.rb:11
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12] [36m  S3 Storage (134.0ms) [0m[31mDeleted file from key: avL4gLktNCYHzFV7SS4iQidD[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ab9542fd-3ea0-419d-8a37-eb1648a49a12] Performed ActiveStorage::PurgeJob (Job ID: ab9542fd-3ea0-419d-8a37-eb1648a49a12) from Inline(default) in 141.87ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: ab9542fd-3ea0-419d-8a37-eb1648a49a12) to Inline(default) with arguments: #<GlobalID:0x00007f9b836fb9d8 @uri=#<URI::GID gid://bumpify/ActiveStorage::Blob/12>>
+  [1m[36mAlbum Load (1.8ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAlbum Destroy (0.5ms)[0m  [1m[31mDELETE FROM "albums" WHERE "albums"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Album"], ["name", "album_cover"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mArtist Load (2.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mArtist Destroy (0.5ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (3.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "preferred_name", "DOB", "gender", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "guest@yahoo.com"], ["preferred_name", "Demo User"], ["DOB", "2008-11-19"], ["gender", "neutral"], ["password_digest", "$2a$12$QAvXcJvWRyGrqfyrRCHRpum.kI88YeV8dIm7yi7VMc5cl4S32MA5q"], ["session_token", "8GAaJhitwMDnnKQJyi1hLA"], ["created_at", "2020-02-18 16:47:27.444221"], ["updated_at", "2020-02-18 16:47:27.444221"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mArtist Create (1.9ms)[0m  [1m[32mINSERT INTO "artists" ("artist_name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_name", "Beyoncé"], ["bio", "One of the most success artists and \n                    music performers in modern history.\n                    A living legend."], ["created_at", "2020-02-18 16:47:27.454608"], ["updated_at", "2020-02-18 16:47:27.454608"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("artist_name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_name", "Frank Ocean"], ["bio", "An eclectic artist who fuses R&B, rap, and alternative.\n                        His bisexual identity is present in his music and is \n                        groundbreaking for a black male music artist."], ["created_at", "2020-02-18 16:47:27.460129"], ["updated_at", "2020-02-18 16:47:27.460129"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("artist_name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_name", "SZA"], ["bio", "SZA is a neo soul singer, whose \n                                music has been described as alternative R&B, \n                                with elements of soul, hip hop, minimalist R&B, \n                                cloud rap, witch house, and chillwave."], ["created_at", "2020-02-18 16:47:27.463956"], ["updated_at", "2020-02-18 16:47:27.463956"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mAlbum Create (0.6ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["album_name", "Lemonade"], ["artist_id", 6], ["created_at", "2020-02-18 16:47:27.472482"], ["updated_at", "2020-02-18 16:47:27.472482"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mAlbum Create (0.5ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["album_name", "channel ORANGE"], ["artist_id", 7], ["created_at", "2020-02-18 16:47:27.478538"], ["updated_at", "2020-02-18 16:47:27.478538"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mAlbum Create (0.6ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["album_name", "Blonde"], ["artist_id", 7], ["created_at", "2020-02-18 16:47:27.483901"], ["updated_at", "2020-02-18 16:47:27.483901"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mAlbum Create (0.5ms)[0m  [1m[32mINSERT INTO "albums" ("album_name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["album_name", "Ctrl"], ["artist_id", 8], ["created_at", "2020-02-18 16:47:27.489675"], ["updated_at", "2020-02-18 16:47:27.489675"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Pray You Catch Me"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.497385"], ["updated_at", "2020-02-18 16:47:27.497385"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:46
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Hold Up"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.503477"], ["updated_at", "2020-02-18 16:47:27.503477"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Don't Hurt Yourself"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.508953"], ["updated_at", "2020-02-18 16:47:27.508953"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Sorry"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.514893"], ["updated_at", "2020-02-18 16:47:27.514893"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "6 Inch"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.519887"], ["updated_at", "2020-02-18 16:47:27.519887"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Daddy Lessons"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.525535"], ["updated_at", "2020-02-18 16:47:27.525535"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mSong Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Love Drought"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.530791"], ["updated_at", "2020-02-18 16:47:27.530791"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:52
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Sandcastles"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.537587"], ["updated_at", "2020-02-18 16:47:27.537587"]]
+  ↳ db/seeds.rb:52
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:53
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Forward"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.543147"], ["updated_at", "2020-02-18 16:47:27.543147"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:54
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:54
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Freedom"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.548414"], ["updated_at", "2020-02-18 16:47:27.548414"]]
+  ↳ db/seeds.rb:54
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:54
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "All Night"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.554553"], ["updated_at", "2020-02-18 16:47:27.554553"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:56
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:56
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_name", "album_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_name", "Formation"], ["album_id", 6], ["created_at", "2020-02-18 16:47:27.559636"], ["updated_at", "2020-02-18 16:47:27.559636"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:56

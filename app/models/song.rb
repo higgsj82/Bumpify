@@ -10,6 +10,8 @@
 #
 
 class Song < ApplicationRecord
+    validates :song_name, :album_id, presence: true
+
     belongs_to :album
     has_one :artist, through: :album
     has_many :likes, as: :likeable

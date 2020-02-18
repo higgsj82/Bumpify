@@ -88,18 +88,28 @@
     font-size: 3.1em;
 }
 
-.volume-controlls-div {
-    background-color: blueviolet;
-    width: 20%;
-    height: 32px;
-    align-items: center;
-}
-
 progress {
     width: 400px;
     margin-top: 2px;
     padding-top: 10px;
     color: #C0C0C0;
+}
+
+.volume-controlls-div {
+    width: 20%;
+    height: 32px;
+    align-items: center;
+    display: flex;
+}
+
+.volume-controlls-div i {
+    color: #C0C0C0;
+    font-size: 1em;
+}
+
+.volume-bar progress {
+    width: 120px;
+    margin-left: 20px;
 }
 
 // progress[value]::-webkit-progress-bar {

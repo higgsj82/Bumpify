@@ -3,7 +3,7 @@ import PlayerControlls from './player_controlls';
 
 const mSTP = state => {
     return {
-        msg: "Hello World"
+        currentSong: state.song
     }
 }
 
