@@ -16,10 +16,8 @@ import MainPageContainer from './main_page/main_page_container';
 const App = () => {
     return (
         <div className="app-div">
-            {/* <HeaderContainer/> */}
                 <MainRoute exact path="/" component={MainPageContainer} other={SplashPageContainer} />
             <Switch>
-                {/* <AuthRoute exact path="/" component={SplashPageContainer} /> */}
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <AuthRoute path="/signup" component={SignupFormContainer} />
             </Switch>

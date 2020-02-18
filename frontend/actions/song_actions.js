@@ -10,8 +10,8 @@ const receiveSong = song => {
     }
 }
 
-export const getSong = songId => dispatch => {
-    return AudioAPIUtils.getSong(songId)
+export const getSong = song => dispatch => {
+    return AudioAPIUtils.getSong(song.id)
     .then(song => dispatch(receiveSong(song)))
 }
 

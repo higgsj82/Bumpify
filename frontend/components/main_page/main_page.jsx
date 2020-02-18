@@ -1,5 +1,4 @@
 import React from 'react';
-import HeaderContainer from '../header/header_container';
 import PlayBarContainer from './play_bar/play_bar_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import MainRootContainer from './root/main_root_container';

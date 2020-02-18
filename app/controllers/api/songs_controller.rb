@@ -1,6 +1,7 @@
 class Api::SongsController < ApplicationController
     def index
-        @songs = AWS::S3::Bucket.find(bumpify-dev).objects
+        # @songs = AWS::S3::Bucket.find(bumpify-dev).objects
+        @songs = Song.all
     end
 
     def show
