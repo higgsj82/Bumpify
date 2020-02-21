@@ -37,7 +37,7 @@ class MainRoot extends React.Component {
                        <img className='tile' src={window.damn} />
                    </div>
                    <div className="tile-container">
-                       <NavLink to="/artist/9">
+                       <NavLink to="/artist/1">
                        <img className='tile' src={window.homecoming} />
                        </NavLink>
                    </div>
