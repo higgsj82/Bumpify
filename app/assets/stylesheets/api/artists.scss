@@ -1,0 +1,111 @@
+.artist-show-section {
+    height: 100%;
+    width: 100%;
+    background-color: #202020;
+    overflow: auto;
+}
+
+.artist-show-section h1 {
+    font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #fff;
+    font-size: 70px;
+    font-weight: bolder;
+    letter-spacing: .03em;
+    padding: 40px 0 35px 20px;
+}
+
+.artist-actions {
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+    width: 270px;
+    height: 10px;
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+
+.artist-actions button {
+    font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 8px 34px;
+    border-radius: 500px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: 1.76px;
+    cursor: pointer;
+}
+
+.artist-play-button {
+    background-color: #FF9933;
+    border: 2px solid #FF9933;
+}
+
+.follow-button {
+    border: 2px solid #fff;
+    background-color: transparent;
+}
+
+.artist-play-button:hover {
+    background-color: #FFCC33;
+    border: 2px solid #FFCC33;
+    padding: 10px 36px;
+}
+
+.follow-button:hover {
+    padding: 10px 36px;
+}
+
+.artist-show-links {
+    width: 205px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 30px;
+}
+.artist-links {
+    font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+div h3 {
+    font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bolder;
+    letter-spacing: .03em;
+    padding: 20px 0 15px 20px;
+    margin: unset;
+}
+
+.popular-songs {
+    font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.popular-songs i {
+    padding: 0 20px;
+}
+
+.popular-icon-div {
+    height: 50px;
+    width: 50px;
+    padding-right: 20px;
+}
+
+.popular-song-name {
+    width: 80%;
+}
+
+.popular-songs:hover {
+    background-color: #505050;
+}
+
+.song-length {
+    padding-right: 20px;
+}

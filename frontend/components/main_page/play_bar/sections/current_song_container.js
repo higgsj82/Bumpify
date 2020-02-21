@@ -3,7 +3,7 @@ import CurrentSong from './current_song';
 
 const mSTP = state => {
     return {
-        // currentSong: state.currentSong
+        currentSong: state.media.currentSong
         // currentArtist: state.currentArtist
     }
 }

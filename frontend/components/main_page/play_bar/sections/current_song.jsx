@@ -9,11 +9,11 @@ class CurrentSong extends React.Component {
         return (
             <div className="current-song-div">
                 <div className="current-song">
-                    <p>Song Title</p>
+                    <p>Formation</p>
                     <i className="far fa-heart"></i>
                 </div>
                 <div className="current-artist">
-                    <p>Artist Name</p>
+                    <p>Beyoncé</p>
                 </div>
             </div>
         )

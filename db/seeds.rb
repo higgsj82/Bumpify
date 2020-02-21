@@ -22,19 +22,12 @@ demo = User.create!(email: 'guest@yahoo.com',
                   gender: 'neutral')
 
 bey = Artist.create!(artist_name: 'Beyoncé',
-                    bio: 'One of the most success artists and 
-                    music performers in modern history.
-                    A living legend.')
+                    bio: 'One of the most success artists and music performers in modern history.A living legend.')
 
 frank = Artist.create!(artist_name: 'Frank Ocean',
-                        bio: 'An eclectic artist who fuses R&B, rap, and alternative.
-                        His bisexual identity is present in his music and is 
-                        groundbreaking for a black male music artist.')
+                        bio: 'An eclectic artist who fuses R&B, rap, and alternative.His bisexual identity is present in his music and is groundbreaking for a black male music artist.')
 
-sza = Artist.create!(artist_name: 'SZA', bio: 'SZA is a neo soul singer, whose 
-                                music has been described as alternative R&B, 
-                                with elements of soul, hip hop, minimalist R&B, 
-                                cloud rap, witch house, and chillwave.')
+sza = Artist.create!(artist_name: 'SZA', bio: 'SZA is a neo soul singer, whose music has been described as alternative R&B, with elements of soul, hip hop, minimalist R&B, cloud rap, witch house, and chillwave.')
 
 lemonade = Album.create!(album_name: 'Lemonade', artist_id: bey.id)
 channel = Album.create!(album_name: 'channel ORANGE', artist_id: frank.id)

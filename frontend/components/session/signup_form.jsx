@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -57,7 +58,7 @@ class SignupForm extends React.Component {
             <div className='form-div'>
                 <div className="form-container">
                     <div className="form-logo">
-                        <a href="/"><img className='session-logo signup-logo' src={window.sessionLogo} /></a>
+                        <NavLink to="/"><img className='session-logo signup-logo' src={window.sessionLogo} /></NavLink>
                     </div>
                     <div className="form-message-div">
                         <span className="form-message">Sign up with your email address.</span>

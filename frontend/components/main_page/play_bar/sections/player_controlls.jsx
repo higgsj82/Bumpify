@@ -5,27 +5,31 @@ class PlayerControlls extends React.Component {
         super(props);
     }
 
-    play() {
-        this.props.song.track.play()
-    }
-
-    pause() {
-
-    }
-
-    shuffle() {
-
-    }
-
-    repeat() {
+    // // componentWillUpdate () {
         
-    }
+    // // }
+
+    // play() {
+    //     // this.props.song.track.play()
+    // }
+
+    // pause() {
+
+    // }
+
+    // shuffle() {
+
+    // }
+
+    // repeat() {
+        
+    // }
     
 
     render() {
         return (
             <div className="player-controlls-div">
-                <audio controls src="https://bumpify-dev.s3.amazonaws.com/02+Hold+Up.m4a" itemType="audio/mpeg"></audio>
+                {/* <audio controls src="https://bumpify-dev.s3.amazonaws.com/02+Hold+Up.m4a" itemType="audio/mpeg"></audio> */}
                 <div className="play-buttons-div">
                     <button className="play-buttons">
                         <i className="fas fa-random"></i>
@@ -47,7 +51,7 @@ class PlayerControlls extends React.Component {
                     </button>
                 </div>
                 <div className="progress-bar">
-                    <progress value="0" max=""></progress>
+                    <progress value="0" min="0" max="4"></progress>
                 </div>
             </div>
         )

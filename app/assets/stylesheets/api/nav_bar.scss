@@ -1,17 +1,16 @@
 .nav-bar-div {
-    width: 230px;
-    left: 0;
-    height: 100%;
+    width: 20%;
+    height: 88%;
     background-color: black;
-    position: fixed;
-    flex-grow: 1;
-    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .nav-logo-div {
     width: 151px;
     height: 50px;
-    padding: 0 0 18px 24px;
+    padding: 24px
 }
 
 .nav-link-divs {
@@ -82,14 +81,6 @@
     font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
     text-align: center;
     font-weight: bold;
-}
-
-
-.current-album-div {
-    bottom: 90px;
-    height: 236px;
-    width: 230px;
-    position: fixed;
 }
 
 .current-album {

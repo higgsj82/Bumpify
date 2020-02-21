@@ -1,28 +1,24 @@
+.root-routes {
+    height: 88%;
+    width: 80%
+}
+
 .main-root-section {
-    right: 0;
-    left: 230px;
-    bottom: 90px;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: #202020;
-    // display: flex;
-    // position: fixed;
-    z-index: -1;
+    overflow: auto;
 }
 
 .main-root-header {
     height: 60px;
+    width: 100%;
     background-color: #202020;
     display: flex;
     justify-content: space-between;
-    left: 230px;
-    right: 0;
-    position: fixed;
-    flex-grow: 1;
     align-items: center;
-    // width: 100%;
-    // position: relative;
     // z-index: 1;
+    // position: absolute;
 }
 
 .main-root-arrows {
@@ -51,4 +47,29 @@
 
 .main-root-header button:hover {
     color: #ffffff;
+}
+
+.main-root-section h2 {
+    font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    // letter-spacing: .03em;
+    padding: 50px 0 35px 20px;
+}
+
+.content-container {
+    // padding: 60px 0 35px 20px;
+    height: 160px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.tile-container {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
 }

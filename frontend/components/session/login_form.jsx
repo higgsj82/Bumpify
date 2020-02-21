@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -44,7 +45,7 @@ class LoginForm extends React.Component {
             <div className='form-div'>
                 <div className="form-container">
                 <div className="form-logo">
-                    <a href="/"><img className='session-logo' src={window.sessionLogo} /></a>
+                    <NavLink to="/"><img className='session-logo' src={window.sessionLogo} /></NavLink>
                 </div>
                     <div className="form-message-div">
                         <span className="login-form-message">To continue, log in to Bumpify.</span>

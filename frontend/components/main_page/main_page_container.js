@@ -8,9 +8,11 @@ const mSTP = state => {
     }
 }
 
-// const mDTP = dispatch => {
-
-// }
+const mDTP = dispatch => {
+    return {
+        
+    }
+}
 
 
 export default connect(mSTP)(MainPage);
