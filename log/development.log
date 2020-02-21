@@ -32610,3 +32610,21 @@ Processing by Api::ArtistsController#index as JSON
 Completed 200 OK in 86ms (Views: 72.3ms | ActiveRecord: 5.5ms)
 
 
+Started GET "/" for ::1 at 2020-02-21 10:47:37 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 233ms (Views: 228.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-02-21 10:47:40 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (6.7ms)
+Completed 200 OK in 452ms (Views: 33.1ms | ActiveRecord: 15.8ms)
+
+
