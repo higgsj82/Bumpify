@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PlaylistContainer from './sections/playlist_container';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -38,7 +39,8 @@ class NavBar extends React.Component {
                         </div>
                     </li>
                 </ul>
-                <div className="playlist-main-div" >
+                <PlaylistContainer/>
+                {/* <div className="playlist-main-div" >
                     <div className="playlist-div">
                         <h1>playlists</h1>
                         <div className="create-playlist-div">
@@ -48,7 +50,7 @@ class NavBar extends React.Component {
                             </button>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="current-album-div">
                     <img className='current-album' src={window.currentAlbum} />
                 </div>
