@@ -8,6 +8,8 @@
 
 Follow.destroy_all
 Like.destroy_all
+PlaylistSong.destroy_all
+Playlist.destroy_all
 Song.destroy_all
 Album.destroy_all
 Artist.destroy_all
@@ -230,3 +232,14 @@ wavy.track.attach(io: wavy_file, filename: '11+Wavy+(Interlude)+%5Bfeat.+James+F
 normal_girl.track.attach(io: normal_girl_file, filename: '12+Normal+Girl.m4a')
 plb.track.attach(io: plb_file, filename: '13+Pretty+Little+Birds+(feat.+Isaiah+Rashad).m4a')
 twenty_something.track.attach(io: twenty_something_file, filename: '14+20+Something.m4a')
+
+# Playlists
+bumpify_featured = Playlist.create!(name: "Bumpify's Featured", user_id: demo.id)
+
+
+# Playlist Songs
+featured1 = PlaylistSong.create!(playlist_id: bumpify_featured.id, song_name: nikes.song_name, song_id: nikes.id)
+featured2 = PlaylistSong.create!(playlist_id: bumpify_featured.id, song_name: formation.song_name, song_id: formation.id)
+featured3 = PlaylistSong.create!(playlist_id: bumpify_featured.id, song_name: supermodel.song_name, song_id: supermodel.id)
+featured4 = PlaylistSong.create!(playlist_id: bumpify_featured.id, song_name: thinkin.song_name, song_id: thinkin.id)
+featured5 = PlaylistSong.create!(playlist_id: bumpify_featured.id, song_name: the_weekend.song_name, song_id: the_weekend.id)

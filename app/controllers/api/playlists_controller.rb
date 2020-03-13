@@ -8,6 +8,10 @@ class Api::PlaylistsController < ApplicationController
             render json: @playlist.errors.full_messages, status: 401
         end
     end
+
+    def index
+        @playlists = Playlist.all
+    end
     
     def show
         @playlist = Playlist.find(params[:id])
