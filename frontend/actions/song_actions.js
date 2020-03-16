@@ -27,7 +27,7 @@ export const getSong = song => dispatch => {
 
 export const getAllSongs = () => dispatch => {
     return AudioAPIUtils.getAllSongs()
-        .then(
-            songs => dispatch(receiveSongs(songs))
-        )
+    .then(
+        songs => dispatch(receiveSongs(songs))
+    )
 }

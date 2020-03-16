@@ -4,9 +4,15 @@ export const getPlaylist = playlistId => {
     })
 }
 
+export const getPlaylists = () => {
+    return $.ajax({
+        url: '/api/playlists'
+    })
+}
+
 export const createPlaylist = (name) => {
     return $.ajax({
-        url: `/api/playlists/${playlistId}`,
+        url: '/api/playlists',
         method: 'POST',
         data: { name }
     })
