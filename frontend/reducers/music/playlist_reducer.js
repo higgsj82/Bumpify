@@ -2,6 +2,7 @@
 import { RECEIVE_PLAYLIST, RECEIVE_PLAYLISTS } from '../../actions/playlist_actions'
 
 const playlistReducer = (state = {}, action) => {
+    debugger
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_PLAYLIST:

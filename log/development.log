@@ -41535,3 +41535,359 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 326ms (Views: 14.4ms | ActiveRecord: 8.8ms)
 
 
+Started DELETE "/api/session" for ::1 at 2020-03-17 09:53:12 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (14.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4V6gBr469cpSKlp7yeL7oQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (6.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (27.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "BRuw4B3mjLQcZHUUnroEvQ"], ["updated_at", "2020-03-17 13:53:12.945012"], ["id", 10]]
+  ↳ app/models/user.rb:42
+  [1m[35m (18.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 130ms (Views: 2.4ms | ActiveRecord: 73.1ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-17 09:53:17 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered api/users/show.json.jbuilder (6.3ms)
+Completed 200 OK in 323ms (Views: 24.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2020-03-17 09:53:26 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (4.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:7
+Completed 404 Not Found in 59ms (ActiveRecord: 42.0ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Artist with 'id'=1:
+  app/controllers/api/artists_controller.rb:7:in `show'
+
+Started GET "/" for ::1 at 2020-03-17 09:55:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BRuw4B3mjLQcZHUUnroEvQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 799ms (Views: 792.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-17 09:55:19 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BRuw4B3mjLQcZHUUnroEvQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "nvxepcbf_8BlW4wVTqGZxw"], ["updated_at", "2020-03-17 13:55:19.444632"], ["id", 10]]
+  ↳ app/models/user.rb:42
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-17 09:55:21 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (2.4ms)
+Completed 200 OK in 307ms (Views: 12.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2020-03-17 09:56:21 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (3.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:7
+Completed 404 Not Found in 6ms (ActiveRecord: 3.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Artist with 'id'=1:
+  app/controllers/api/artists_controller.rb:7:in `show'
+
+Started GET "/" for ::1 at 2020-03-17 09:56:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nvxepcbf_8BlW4wVTqGZxw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 137ms (Views: 126.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/artists/9" for ::1 at 2020-03-17 09:56:28 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mArtist Load (74.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:7
+Completed 404 Not Found in 77ms (ActiveRecord: 74.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Artist with 'id'=9:
+  app/controllers/api/artists_controller.rb:7:in `show'
+
+Started DELETE "/api/session" for ::1 at 2020-03-17 09:56:58 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nvxepcbf_8BlW4wVTqGZxw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@yahoo.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "vlOahIHPcP8c0fUGlG4EDg"], ["updated_at", "2020-03-17 13:56:58.758236"], ["id", 10]]
+  ↳ app/models/user.rb:42
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-17 09:57:00 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 304ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/artists/15" for ::1 at 2020-03-17 09:57:00 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:7
+  Rendering api/artists/show.json.jbuilder
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from _app_views_api_artists_show_json_jbuilder___4256997412932305559_70201921866400 at /Users/Jay/Desktop/Bumpify/app/views/api/artists/show.json.jbuilder:1)
+  [1m[36mSong Load (27.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1 ORDER BY RANDOM() LIMIT $2[0m  [["artist_id", 15], ["LIMIT", 5]]
+  ↳ app/views/api/artists/show.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "albums"."id" FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 15]]
+  ↳ app/views/api/artists/show.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 196], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 153], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 199], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 188], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 151], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 198], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 155], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 15]]
+  ↳ app/views/api/artists/show.json.jbuilder:20
+  Rendered api/artists/show.json.jbuilder (147.4ms)
+Completed 200 OK in 180ms (Views: 113.6ms | ActiveRecord: 49.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 10:00:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "vlOahIHPcP8c0fUGlG4EDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 150ms (Views: 143.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/artists/15" for ::1 at 2020-03-17 10:00:33 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (5.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:7
+  Rendering api/artists/show.json.jbuilder
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from _app_views_api_artists_show_json_jbuilder___4256997412932305559_70201880311100 at /Users/Jay/Desktop/Bumpify/app/views/api/artists/show.json.jbuilder:1)
+  [1m[36mSong Load (200.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1 ORDER BY RANDOM() LIMIT $2[0m  [["artist_id", 15], ["LIMIT", 5]]
+  ↳ app/views/api/artists/show.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (0.7ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "albums"."id" FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 15]]
+  ↳ app/views/api/artists/show.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 198], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 155], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (10.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 199], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (15.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 149], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 190], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 147], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 15]]
+  ↳ app/views/api/artists/show.json.jbuilder:20
+  Rendered api/artists/show.json.jbuilder (370.8ms)
+Completed 200 OK in 399ms (Views: 149.8ms | ActiveRecord: 241.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWnM9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5c508cc7694597fd644c45113cd16bbbc30d89c6/11+All+Night.m4a" for ::1 at 2020-03-17 10:00:40 -0400
+Processing by ActiveStorage::BlobsController#show as M4A
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWnM9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5c508cc7694597fd644c45113cd16bbbc30d89c6", "filename"=>"11+All+Night"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 155], ["LIMIT", 1]]
+  ↳ /Users/Jay/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (14.3ms) [0m[34mGenerated URL for file at key: vzfWg18AC1LsZpRBvUmDL4Rz (https://bumpify-dev.s3.amazonaws.com/vzfWg18AC1LsZpRBvUmDL4Rz?response-content-disposition=attachment%3B%20filename%3D%2211%252BAll%252BNight.m4a%22%3B%20filename%2A%3DUTF-8%27%2711%2BAll%2BNight.m4a&response-content-type=audio%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5HOFRYRUC5NHNHH2%2F20200317%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200317T140040Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b13840633b093dfcbdcbe899be06d9d8d8335b18cebf8730e9a37200bc07a821)[0m
+Redirected to https://bumpify-dev.s3.amazonaws.com/vzfWg18AC1LsZpRBvUmDL4Rz?response-content-disposition=attachment%3B%20filename%3D%2211%252BAll%252BNight.m4a%22%3B%20filename%2A%3DUTF-8%27%2711%2BAll%2BNight.m4a&response-content-type=audio%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5HOFRYRUC5NHNHH2%2F20200317%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200317T140040Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b13840633b093dfcbdcbe899be06d9d8d8335b18cebf8730e9a37200bc07a821
+Completed 302 Found in 21ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 10:05:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "vlOahIHPcP8c0fUGlG4EDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 835ms (Views: 830.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 10:07:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "vlOahIHPcP8c0fUGlG4EDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 882ms (Views: 872.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 10:10:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "vlOahIHPcP8c0fUGlG4EDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 675ms (Views: 669.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/artists/15" for ::1 at 2020-03-17 10:10:47 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:7
+  Rendering api/artists/show.json.jbuilder
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from _app_views_api_artists_show_json_jbuilder___4256997412932305559_70201877860080 at /Users/Jay/Desktop/Bumpify/app/views/api/artists/show.json.jbuilder:1)
+  [1m[36mSong Load (41.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1 ORDER BY RANDOM() LIMIT $2[0m  [["artist_id", 15], ["LIMIT", 5]]
+  ↳ app/views/api/artists/show.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (0.7ms)
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "albums"."id" FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 15]]
+  ↳ app/views/api/artists/show.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 190], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 147], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 199], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 151], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 150], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 196], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (4.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 153], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 15]]
+  ↳ app/views/api/artists/show.json.jbuilder:20
+  Rendered api/artists/show.json.jbuilder (134.7ms)
+Completed 200 OK in 157ms (Views: 88.1ms | ActiveRecord: 62.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 10:11:38 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "vlOahIHPcP8c0fUGlG4EDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 894ms (Views: 889.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/artists/15" for ::1 at 2020-03-17 10:11:45 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:7
+  Rendering api/artists/show.json.jbuilder
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from _app_views_api_artists_show_json_jbuilder___4256997412932305559_70201889452300 at /Users/Jay/Desktop/Bumpify/app/views/api/artists/show.json.jbuilder:1)
+  [1m[36mSong Load (2.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1 ORDER BY RANDOM() LIMIT $2[0m  [["artist_id", 15], ["LIMIT", 5]]
+  ↳ app/views/api/artists/show.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (0.8ms)
+  [1m[35m (49.8ms)[0m  [1m[34mSELECT "albums"."id" FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 15]]
+  ↳ app/views/api/artists/show.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 151], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 199], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (4.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 150], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 191], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "Song"], ["name", "track"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 149], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:15
+  [1m[36mAlbum Load (1.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 15]]
+  ↳ app/views/api/artists/show.json.jbuilder:20
+  Rendered api/artists/show.json.jbuilder (260.4ms)
+Completed 200 OK in 285ms (Views: 212.0ms | ActiveRecord: 66.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWnc9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--baad4dbc6e31caba126c0aef494dca59acfd4a82/12+Formation.m4a" for ::1 at 2020-03-17 10:12:32 -0400
+Processing by ActiveStorage::BlobsController#show as M4A
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWnc9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--baad4dbc6e31caba126c0aef494dca59acfd4a82", "filename"=>"12+Formation"}
+  [1m[36mActiveStorage::Blob Load (3.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ /Users/Jay/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.6ms) [0m[34mGenerated URL for file at key: pVro7rE6kwyFGcAUL5MDERqz (https://bumpify-dev.s3.amazonaws.com/pVro7rE6kwyFGcAUL5MDERqz?response-content-disposition=attachment%3B%20filename%3D%2212%252BFormation.m4a%22%3B%20filename%2A%3DUTF-8%27%2712%2BFormation.m4a&response-content-type=audio%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5HOFRYRUC5NHNHH2%2F20200317%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200317T141232Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5cdd2c9dcc63e9d920ff4007f066e838e987d349bb46f9632514250171627254)[0m
+Redirected to https://bumpify-dev.s3.amazonaws.com/pVro7rE6kwyFGcAUL5MDERqz?response-content-disposition=attachment%3B%20filename%3D%2212%252BFormation.m4a%22%3B%20filename%2A%3DUTF-8%27%2712%2BFormation.m4a&response-content-type=audio%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5HOFRYRUC5NHNHH2%2F20200317%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200317T141232Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5cdd2c9dcc63e9d920ff4007f066e838e987d349bb46f9632514250171627254
+Completed 302 Found in 21ms (ActiveRecord: 3.9ms)
+
+

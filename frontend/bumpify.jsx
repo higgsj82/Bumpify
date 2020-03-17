@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         store = bumpifyStore();
     }
     // testing
+    window.getState = store.getState();
     // testing
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store}></Root>, root);

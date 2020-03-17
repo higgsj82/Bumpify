@@ -8,11 +8,11 @@ import { updateCurrentSong } from '../../../../actions/media_actions';
 const mSTP = (state = {}, ownProps) => {
     const artistId = ownProps.match.params.id;
     const albumIds = ownProps.match.params.album_ids;
-    const artist = state.entities.artists[artistId];
+    const artist = state.entities.music.artists[artistId];
     const songIds = artist ? artist.song_ids : []
 
     const popularSongs = songIds.map(id => {
-        return state.entities.songs[id]
+        return state.entities.music.songs[id]
     })
     // const popularSongs = state.entities.artists[artistId].popularSongs;
 

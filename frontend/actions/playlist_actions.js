@@ -25,8 +25,8 @@ export const getPlaylist = playlist => dispatch => {
     )
 }
 
-export const getAllPlaylists = () => dispatch => {
-    return PlaylistAPIUtils.getAllPlaylists()
+export const getPlaylists = () => dispatch => {
+    return PlaylistAPIUtils.getPlaylists()
     .then(
         playlists => dispatch(receivePlaylists(playlists))
     )
