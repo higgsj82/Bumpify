@@ -40,17 +40,6 @@ class NavBar extends React.Component {
                     </li>
                 </ul>
                 <PlaylistContainer/>
-                {/* <div className="playlist-main-div" >
-                    <div className="playlist-div">
-                        <h1>playlists</h1>
-                        <div className="create-playlist-div">
-                            <button className="create-playlist-button" >
-                                <i className="fas fa-plus-square"></i>
-                                <span>Create Playlist</span>
-                            </button>
-                        </div>
-                    </div>
-                </div> */}
                 <div className="current-album-div">
                     <img className='current-album' src={window.currentAlbum} />
                 </div>

@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import Playlists from './playlist';
 
-const mSTP = state => {
+const mSTP = (state = {}, ownProps) => {
+    // debugger
     return {
-
+        playlists: state.entities.music.playlists
     }
 }
 
 const mDTP = dispatch => {
     return {
-        // createPlaylist: name => dispatch(createPlaylist(name))
+        createPlaylist: name => dispatch(createPlaylist(name))
     }
 }
 
