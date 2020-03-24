@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from './modal';
+import NewPlaylist from './new_playlist_form';
 
 class Playlists extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class Playlists extends React.Component {
                             <span>Create Playlist</span>
                         </button>
                         <Modal active={this.state.active} exitModal={this.closeModal}>
-
+                            <NewPlaylist exitModal={this.closeModal} />
                         </Modal>
                     </div>
                 </div>

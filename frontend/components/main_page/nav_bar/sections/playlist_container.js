@@ -10,7 +10,7 @@ const mSTP = (state = {}, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        createPlaylist: name => dispatch(createPlaylist(name))
+    //     createPlaylist: name => dispatch(createPlaylist(name))
     }
 }
 
