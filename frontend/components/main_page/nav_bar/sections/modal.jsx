@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Children } from 'react';
 
-const Modal = ({ active, exitModal }) => {
+const Modal = ({ active, exitModal, children }) => {
     if (!active) return null;
     return(
         <div className="modal-container">
-            <section className="modal-section">
-
-            </section>
+            <button className="close-modal" onClick={exitModal}>
+                <i className="fas fa-times"></i>
+            </button>
+            {children}
         </div>
     )
 }

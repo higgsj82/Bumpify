@@ -1,0 +1,151 @@
+.modal-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.9);
+    z-index: 4;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.new-playlist-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+}
+
+.close-modal {
+    font-size: 60px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+.close-modal i:hover {
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    font-size: 66px;
+    color: 	#A9A9A9;
+}
+
+.new-playlist-container > h1 {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -.005em;
+    font-weight: 600;
+    color: #fff;
+    text-transform: none;
+    text-align: center;
+    margin: 16px;
+}
+
+.new-playlist-form {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    letter-spacing: .015em;
+}
+
+.playlist-input-main {
+    padding: 0;
+    background-color: #282828;
+}
+
+.playlist-input-inner {
+    background-color: #282828;
+    position: relative;
+    padding: 32px;
+}
+
+.playlist-input {
+    padding: 0 32px;
+    margin: 0;
+    max-width: 1955px;
+    border: 0;
+    vertical-align: baseline;
+}
+
+.playlist-input > h4 {
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    font-weight: 600;
+    color: #fff;
+    text-transform: none;
+    margin-bottom: .5em;
+}
+
+.playlist-input > input {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -.005em;
+    font-weight: 600;
+    color: #fff;
+    text-transform: none;
+    caret-color: #FFCC33;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+.modal-buttons {
+    padding: 28px;
+    display: flex;
+    justify-content: center;
+    -webkit-box-pack: center;
+
+    div {
+        padding: 0px 10px;
+
+        button {
+            background-color: transparent;
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 700;
+            letter-spacing: 1.76px;
+            text-transform: uppercase;
+            border-radius: 500px;
+            color: #fff;
+            transition: all 33ms cubic-bezier(.3,0,0,1);
+            will-change: transform;
+            white-space: nowrap;
+            padding: 8px 34px;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+        }
+    }
+
+    .cancel-modal {
+        button {
+            border: 2px solid #fff;
+        }
+        button:hover {
+            border: 2px solid #A9A9A9;
+            background-color: #A9A9A9;
+        }
+    }
+
+    .create-playlist {
+        button {
+            background-color: #FF9933;
+        }
+        button:hover {
+            background-color: #FFCC33;
+        }
+    }
+}
+

@@ -15,7 +15,11 @@ class Playlists extends React.Component {
     }
 
     closeModal(e) {
-        e.preventDefault();
+        // e.preventDefault(); BUG
+        // prevent default prevents the default action the brrowser makes on
+        // that event, wherein stopPropogation stops the event from bubling up
+        // the event chain
+        e.stopPropagation();
         this.setState({ active: false })
     }
 
@@ -25,12 +29,16 @@ class Playlists extends React.Component {
             <div className="playlist-main-div" >
                 <div className="playlist-div">
                     <h1>playlists</h1>
-                    <div className="create-playlist-div" onClick={this.displayModal}>
+                    <div className="create-playlist-div" 
+                        onClick={this.displayModal}>
                         <button className="create-playlist-button" >
                             <i className="fas fa-plus-square"></i>
                             <span>Create Playlist</span>
                         </button>
-                        <Modal active={this.state.active} exitModal={this.closeModal}>
+                        <Modal 
+                            active={this.state.active} 
+                            exitModal={this.closeModal}
+                        >
                             <NewPlaylist exitModal={this.closeModal} />
                         </Modal>
                     </div>
