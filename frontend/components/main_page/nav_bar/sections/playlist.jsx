@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from './modal';
 import NewPlaylist from './new_playlist_form';
+import PlaylistIndexContainer from './playlist_index_container';
 
 class Playlists extends React.Component {
     constructor(props) {
@@ -41,6 +42,10 @@ class Playlists extends React.Component {
                         >
                             <NewPlaylist exitModal={this.closeModal} />
                         </Modal>
+                    </div>
+                    {/* liked songs playlist here */}
+                    <div className="playlist-index-container">
+                        <PlaylistIndexContainer/>
                     </div>
                 </div>
             </div>
