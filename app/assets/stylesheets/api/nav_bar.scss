@@ -63,9 +63,10 @@
 
 .create-playlist-button {
     color: #B3B3B3;
-    padding: 5px 24px;
+    padding: 5px 16px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .create-playlist-button i {
@@ -89,4 +90,17 @@
 
 .playlist-index-container {
     overflow-y: auto;
+}
+
+.playlist-index {
+    color: #B3B3B3;
+    padding-left: 16px;
+}
+
+.list-item-name {
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: .015em;
+    text-transform: none;
+    font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
 }

@@ -1,9 +1,10 @@
 class Api::PlaylistsController < ApplicationController
     def create
         @playlist = Playlist.new(playlist_params)
+        @playlist.user_id = current_user.id
 
         if @playlist.save
-            render :show
+            render 'api/playlists/show'
         else
             render json: @playlist.errors.full_messages, status: 401
         end

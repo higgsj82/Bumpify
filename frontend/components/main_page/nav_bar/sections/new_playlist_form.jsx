@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createPlaylist } from '../../../../util/playlist_api_util';
+import { createPlaylist } from '../../../../actions/playlist_actions';
 
 
 class NewPlaylistForm extends React.Component {
@@ -17,7 +17,7 @@ class NewPlaylistForm extends React.Component {
         this.setState({ name: "" })
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
         e.preventDefault();
         this.props.createPlaylist(this.state).then(() => this.props.closeModal(e));
     }

@@ -10,10 +10,10 @@ export const getPlaylists = () => {
     })
 }
 
-export const createPlaylist = (name) => {
+export const createPlaylist = playlist => {
     return $.ajax({
         url: '/api/playlists',
         method: 'POST',
-        data: { name }
+        data: { playlist: playlist }
     })
 }
