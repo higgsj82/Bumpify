@@ -45878,3 +45878,201 @@ Processing by Api::PlaylistsController#create as JSON
 Completed 200 OK in 67ms (Views: 15.8ms | ActiveRecord: 31.5ms)
 
 
+Started GET "/" for ::1 at 2020-03-28 15:11:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6rh_jt1FFUlHFLgzxjreyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 1061ms (Views: 1055.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/playlists" for ::1 at 2020-03-28 15:11:08 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (77.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/_playlist.json.jbuilder (0.8ms)
+  Rendered api/playlists/_playlist.json.jbuilder (0.3ms)
+  [1m[36mPlaylistSong Load (1.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  [1m[36mPlaylistSong Load (0.4ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  Rendered api/playlists/index.json.jbuilder (98.4ms)
+Completed 200 OK in 124ms (Views: 38.6ms | ActiveRecord: 79.0ms)
+
+
+Started POST "/api/playlists" for ::1 at 2020-03-28 15:11:16 -0400
+Processing by Api::PlaylistsController#create as JSON
+  Parameters: {"playlist"=>{"name"=>"workout"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6rh_jt1FFUlHFLgzxjreyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[36mPlaylist Create (0.8ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "workout"], ["user_id", 10], ["created_at", "2020-03-28 19:11:16.552429"], ["updated_at", "2020-03-28 19:11:16.552429"]]
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/playlists_controller.rb:6
+  Rendering api/playlists/show.json.jbuilder
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/views/api/playlists/show.json.jbuilder:4
+  Rendered api/playlists/show.json.jbuilder (2.3ms)
+Completed 200 OK in 29ms (Views: 14.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-28 15:13:39 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6rh_jt1FFUlHFLgzxjreyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 1000ms (Views: 994.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/playlists" for ::1 at 2020-03-28 15:13:41 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (2.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/_playlist.json.jbuilder (0.5ms)
+  Rendered api/playlists/_playlist.json.jbuilder (0.3ms)
+  Rendered api/playlists/_playlist.json.jbuilder (0.3ms)
+  [1m[36mPlaylistSong Load (1.7ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  [1m[36mPlaylistSong Load (3.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  [1m[36mPlaylistSong Load (3.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  Rendered api/playlists/index.json.jbuilder (788.9ms)
+Completed 200 OK in 818ms (Views: 798.5ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/api/playlists" for ::1 at 2020-03-28 15:14:07 -0400
+Processing by Api::PlaylistsController#create as JSON
+  Parameters: {"playlist"=>{"name"=>"happy"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6rh_jt1FFUlHFLgzxjreyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[36mPlaylist Create (1.4ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "happy"], ["user_id", 10], ["created_at", "2020-03-28 19:14:07.828917"], ["updated_at", "2020-03-28 19:14:07.828917"]]
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/playlists_controller.rb:6
+  Rendering api/playlists/show.json.jbuilder
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 5]]
+  ↳ app/views/api/playlists/show.json.jbuilder:4
+  Rendered api/playlists/show.json.jbuilder (3.0ms)
+Completed 200 OK in 46ms (Views: 13.6ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/" for ::1 at 2020-03-28 15:15:39 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6rh_jt1FFUlHFLgzxjreyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 992ms (Views: 980.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/playlists" for ::1 at 2020-03-28 15:15:41 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/_playlist.json.jbuilder (0.7ms)
+  Rendered api/playlists/_playlist.json.jbuilder (0.3ms)
+  Rendered api/playlists/_playlist.json.jbuilder (0.4ms)
+  Rendered api/playlists/_playlist.json.jbuilder (0.2ms)
+  [1m[36mPlaylistSong Load (11.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  [1m[36mPlaylistSong Load (43.5ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  [1m[36mPlaylistSong Load (26.8ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  [1m[36mPlaylistSong Load (0.4ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 5]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  Rendered api/playlists/index.json.jbuilder (2818.4ms)
+Completed 200 OK in 2843ms (Views: 2752.0ms | ActiveRecord: 82.7ms)
+
+
+Started POST "/api/playlists" for ::1 at 2020-03-28 15:16:24 -0400
+Processing by Api::PlaylistsController#create as JSON
+  Parameters: {"playlist"=>{"name"=>"lofi study sesh"}}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6rh_jt1FFUlHFLgzxjreyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (16.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[36mPlaylist Create (0.9ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "lofi study sesh"], ["user_id", 10], ["created_at", "2020-03-28 19:16:24.290366"], ["updated_at", "2020-03-28 19:16:24.290366"]]
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/playlists_controller.rb:6
+  Rendering api/playlists/show.json.jbuilder
+  [1m[36mPlaylistSong Load (2.7ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 6]]
+  ↳ app/views/api/playlists/show.json.jbuilder:4
+  Rendered api/playlists/show.json.jbuilder (5.3ms)
+Completed 200 OK in 99ms (Views: 20.8ms | ActiveRecord: 42.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-28 15:21:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6rh_jt1FFUlHFLgzxjreyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (15.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 793ms (Views: 770.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/playlists" for ::1 at 2020-03-28 15:21:56 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (48.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/_playlist.json.jbuilder (1.9ms)
+  Rendered api/playlists/_playlist.json.jbuilder (0.2ms)
+  Rendered api/playlists/_playlist.json.jbuilder (0.2ms)
+  Rendered api/playlists/_playlist.json.jbuilder (0.5ms)
+  Rendered api/playlists/_playlist.json.jbuilder (0.2ms)
+  [1m[36mPlaylistSong Load (7.6ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  [1m[36mPlaylistSong Load (88.8ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  [1m[36mPlaylistSong Load (0.4ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 5]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 6]]
+  ↳ app/views/api/playlists/index.json.jbuilder:7
+  Rendered api/playlists/index.json.jbuilder (866.6ms)
+Completed 200 OK in 886ms (Views: 735.1ms | ActiveRecord: 146.2ms)
+
+
+Started POST "/api/playlists" for ::1 at 2020-03-28 15:23:31 -0400
+Processing by Api::PlaylistsController#create as JSON
+  Parameters: {"playlist"=>{"name"=>"TURN UP"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6rh_jt1FFUlHFLgzxjreyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[36mPlaylist Create (0.9ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "TURN UP"], ["user_id", 10], ["created_at", "2020-03-28 19:23:31.420999"], ["updated_at", "2020-03-28 19:23:31.420999"]]
+  ↳ app/controllers/api/playlists_controller.rb:6
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/playlists_controller.rb:6
+  Rendering api/playlists/show.json.jbuilder
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = $1[0m  [["playlist_id", 7]]
+  ↳ app/views/api/playlists/show.json.jbuilder:4
+  Rendered api/playlists/show.json.jbuilder (3.0ms)
+Completed 200 OK in 77ms (Views: 13.9ms | ActiveRecord: 3.9ms)
+
+

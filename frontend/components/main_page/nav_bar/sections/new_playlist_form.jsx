@@ -19,7 +19,7 @@ class NewPlaylistForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createPlaylist(this.state).then(() => this.props.closeModal(e));
+        this.props.createPlaylist(this.state).then(() => this.props.exitModal(e));
     }
 
     updateName(e) {
