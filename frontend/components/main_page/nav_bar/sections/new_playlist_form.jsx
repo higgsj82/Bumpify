@@ -28,6 +28,7 @@ class NewPlaylistForm extends React.Component {
     }
 
     closeModal(e) {
+        // e.persist();
         this.props.exitModal(e)
     }
 
@@ -53,7 +54,7 @@ class NewPlaylistForm extends React.Component {
                 </form>
                 <div className="modal-buttons">
                     <div className="cancel-modal">
-                        <button onClick={this.closeModal}>
+                        <button onClick={e => this.props.exitModal(e)}>
                             Cancel</button>
                     </div>
                     <div className="create-playlist">
