@@ -141,12 +141,6 @@ class SignupForm extends React.Component {
                                         /> Non-binary
                             </label> 
                         </div>
-                        <label className="checkbox-container">
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                            Share my registration data with Bumpify's content 
-                            providers for marketing purposes.
-                        </label>
                         <div className="signup-button-div">
                             <button className="signup-button">SIGN UP</button>
                         </div>

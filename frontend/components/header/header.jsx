@@ -9,9 +9,9 @@ const Header = ({ currentUser, logout }) => {
             </div>
             <div className='header no-session'>
                 <div className='link-container'>
+                    <a href='https://higgsj82.github.io/' target="_blank">About Me</a>
                     <a href='https://www.linkedin.com/in/ja-lisha-higgs-b8331a42' target="_blank">LinkedIn</a>
                     <a href='https://github.com/higgsj82' target="_blank">GitHub</a>
-                    <a href='https://github.com/higgsj82/Bumpify' target="_blank">Download</a>
                     <p className='link-divider'>｜</p>
                     <Link to='/signup' className='session-links'>Sign Up</Link>
                     <Link to='/login' className='session-links'>Log In</Link>
