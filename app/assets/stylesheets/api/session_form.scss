@@ -55,6 +55,12 @@
     padding-top: 20px;
 }
 
+.border {
+    height: 48px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+}
+
 .input-field {
     display: block;
     background-origin: padding-box;
@@ -257,6 +263,10 @@
     color: #FFCC33;
 }
 
-.errors {
+.session-errors {
     color: #FF3855
+}
+
+.errors {
+    border: 1px solid #FF3855;
 }

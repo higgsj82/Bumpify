@@ -41,18 +41,28 @@ class SignupForm extends React.Component {
     }
 
     renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li className="errors" key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+        if (this.props.errors.length > 0) {
+            return (
+                <ul>
+                    {this.props.errors.map((error, i) => (
+                        <li className="session-errors" key={`error-${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            );
+        } else {
+            return null;
+        }
     }
 
     render() {
+        let errors;
+        if (this.renderErrors() === null) {
+            errors = "";
+        } else {
+            errors = "errors"
+        }
         return (
             <>
             <div className='form-div'>
@@ -65,29 +75,29 @@ class SignupForm extends React.Component {
                     </div> <br/>
                     {this.renderErrors()}
                     <form className="signup-form" onSubmit={this.handleSubmit}>
-                        <input className="input-field"
+                        <input className={`input-field ${errors}`}
                             type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
-                            placeholder="Email" /> <br/>
-                        <input className="input-field"
+                            placeholder="Email" /> {this.props.errors.email} <br/>
+                        <input className={`input-field ${errors}`}
                             type="text"
                             value={this.state.confirmEmail}
                             onChange={this.update('confirmEmail')}
                             placeholder="Confirm email" /> <br/>
-                        <input className="input-field"
+                        <input className={`input-field ${errors}`}
                             type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password" /> <br/>
-                        <input className="input-field"
+                        <input className={`input-field ${errors}`}
                             type="text"
                             value={this.state.preferred_name}
                             onChange={this.update('preferred_name')}
                             placeholder="What should we call you?" /> <br/>
                             <label className="dob-label">Date of Birth</label>
                         <div className="dob-container">
-                            <select className="dob dob-month" value={this.state.month} onChange={this.update('month')} >
+                            <select className={`dob dob-month ${errors}`} value={this.state.month} onChange={this.update('month')} >
                                 <option value="selected">Month</option>
                                 <option value="01">January</option>
                                 <option value="02">February</option>
@@ -102,7 +112,7 @@ class SignupForm extends React.Component {
                                 <option value="11">Novemeber</option>
                                 <option value="12">December</option>
                             </select>
-                            <input className="dob dob-day" 
+                            <input className={`dob dob-day ${errors}`}
                                     type="number"
                                     value={this.state.day}
                                     // on={this.format(this.state.day)}
@@ -110,7 +120,7 @@ class SignupForm extends React.Component {
                                     min="01" 
                                     max="31" 
                                     placeholder="Day"/>
-                            <input className="dob dob-year" 
+                                <input className={`dob dob-year ${errors}`}
                                     type="number" 
                                     value={this.state.year}
                                     onChange={this.update('year')}

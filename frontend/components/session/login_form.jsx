@@ -28,18 +28,29 @@ class LoginForm extends React.Component {
     }
 
     renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li className="errors" key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+        if (this.props.errors.length > 0) {
+            return (
+                <ul>
+                    {this.props.errors.map((error, i) => (
+                        <li className="session-errors" key={`error-${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            );
+        } else {
+            return null;
+        }
     }
     
     render() {
+        let errors;
+        if (this.renderErrors() === null) {
+            errors = "";
+        } else {
+            errors = "errors"
+        }
+
         return (
             <>
             <div className='form-div'>
@@ -52,12 +63,12 @@ class LoginForm extends React.Component {
                     </div> <br/>
                     {this.renderErrors()}
                     <form className="login-form" onSubmit={this.handleSubmit}>
-                        <input className="input-field" 
+                        <input className={`input-field ${errors}`}
                             type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email address or username" /> <br/>
-                        <input className="input-field" 
+                        <input className={`input-field ${errors}`} 
                             type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
