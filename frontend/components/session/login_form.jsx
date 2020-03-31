@@ -63,7 +63,7 @@ class LoginForm extends React.Component {
                             onChange={this.update('password')}
                             placeholder="Password" /> <br/>
                         <div className="row-submit">
-                            <div className="button-div">
+                            <div className="button-div ">
                                 <button className="session-button">LOG IN</button>
                             </div>
                         </div>
