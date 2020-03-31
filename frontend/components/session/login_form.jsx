@@ -63,10 +63,6 @@ class LoginForm extends React.Component {
                             onChange={this.update('password')}
                             placeholder="Password" /> <br/>
                         <div className="row-submit">
-                            <label className="checkbox-container-login">
-                                <input className="checkbox" type="checkbox" />
-                                <span className="checkmark"></span> Remember me
-                            </label>
                             <div className="button-div">
                                 <button className="session-button">LOG IN</button>
                             </div>
