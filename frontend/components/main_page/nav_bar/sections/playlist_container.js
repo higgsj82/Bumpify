@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Playlists from './playlist';
+import Playlists from './playlists';
 
 const mSTP = (state = {}, ownProps) => {
     // debugger

@@ -5,6 +5,7 @@ import MainRootContainer from './root/main_root_container';
 import { Route, Switch } from 'react-router-dom';
 import ArtistContainer from './root/artist_show/artist_container';
 import MediaPlayerContainer from './media_player_container';
+import PlaylistContainer from './root/playlist_show/playlist_container';
 // import AlbumContainer from './root/album/album_container';
 // import SearchContainer from './root/search/seach_container';
 
@@ -23,7 +24,7 @@ class MainPage extends React.Component {
                     <Switch>
                         {/* <Route path="/album/:id" component={AlbumContainer} /> */}
                         <Route path="/artist/:id" component={ArtistContainer} />
-                        {/* <Route path="/playlist/:id" component={PlaylistContainer} /> */}
+                        <Route path="/playlists/:id" component={PlaylistContainer} />
                         {/* <Route path="/search" component={SearchContainer} /> */}
                         <Route exact path ="/" component={MainRootContainer} />
                     </Switch>
