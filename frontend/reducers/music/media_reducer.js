@@ -1,9 +1,11 @@
 import { RECEIVE_SONG } from '../../actions/song_actions';
-import { UPDATE_CURRENT_SONG } from '../../actions/media_actions';
+import { UPDATE_CURRENT_SONG, PLAY_SONG, PAUSE_SONG } from '../../actions/media_actions';
 import { RECEIVE_ARTIST } from '../../actions/artist_actions';
 
 const _pseudoSong = Object.freeze({
-    currentSong: null
+    currentSong: null,
+    playing: false,
+    queue: []
 });
 
 const mediaReducer = (state = _pseudoSong, action) => {
@@ -15,6 +17,10 @@ const mediaReducer = (state = _pseudoSong, action) => {
             return Object.assign({}, state, action.artist.popularSongs)
         case UPDATE_CURRENT_SONG: 
             return { currentSong: action.song }
+        case PLAY_SONG:
+            return { playing: true }
+        case PAUSE_SONG:
+            return { playing: false }
         default:
             return state;
     }

@@ -9,11 +9,16 @@ export const updateCurrentSong = song => {
     }
 }
 
-const playSong = () => {
-    type: PLAY_SONG
+const playSong = song => {
+    return {
+        type: PLAY_SONG,
+        song
+    }
 }
 
 const pauseSong = () => {
-    type: PAUSE_SONG
+    return {
+        type: PAUSE_SONG
+    }
 }
 
