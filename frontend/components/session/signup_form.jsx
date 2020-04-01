@@ -79,7 +79,7 @@ class SignupForm extends React.Component {
                             type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
-                            placeholder="Email" /> {this.props.errors.email} <br/>
+                            placeholder="Email" /> <br/>
                         <input className={`input-field ${errors}`}
                             type="text"
                             value={this.state.confirmEmail}
@@ -115,7 +115,6 @@ class SignupForm extends React.Component {
                             <input className={`dob dob-day ${errors}`}
                                     type="number"
                                     value={this.state.day}
-                                    // on={this.format(this.state.day)}
                                     onChange={this.update('day')}
                                     min="01" 
                                     max="31" 
