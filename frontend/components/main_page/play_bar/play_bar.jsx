@@ -12,7 +12,7 @@ class PlayBar extends React.Component {
         return (
             <footer className="play-bar">
                 <CurrentSong/>
-                <PlayerControlls/>
+                <PlayerControlls currentSong={this.props.currentSong}/>
                 <VolumeControlls/>
             </footer>
         )

@@ -3,19 +3,36 @@ import React from 'react';
 class PlayerControlls extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            playing: false
+        }
+
+        this.play = this.play.bind(this);
+        this.pause = this.pause.bind(this);
+        this.playAction = this.playAction.bind(this);
     }
 
     // // componentWillUpdate () {
         
     // // }
 
-    // play() {
-    //     // this.props.song.track.play()
-    // }
+    play() {
+        let { currentSong } = this.props;
+        if (currentSong.id) {
+            this.setState({ playing: true })
+        }
+    }
 
-    // pause() {
+    pause() {
+        this.setState({ playing: false })
+    }
 
-    // }
+    playAction(e) {
+        e.preventDefault();
+        let { playing } = this.state;
+        playing ? this.play() : this.pause()
+    }
 
     // shuffle() {
 
@@ -27,6 +44,7 @@ class PlayerControlls extends React.Component {
     
 
     render() {
+        let actionIcon = this.state.playing ? 'fa-pause-circle' : 'fa-play-circle'
         return (
             <div className="player-controlls-div">
                 {/* <audio controls src="https://bumpify-dev.s3.amazonaws.com/02+Hold+Up.m4a" itemType="audio/mpeg"></audio> */}
@@ -38,8 +56,11 @@ class PlayerControlls extends React.Component {
                         <i className="fas fa-angle-double-left"></i>
                     </button>
                     <div className="play-button-div">
-                        <button className="play-buttons play-button">
-                            <i className="far fa-play-circle"></i>
+                        <button 
+                            className="play-buttons play-button"
+                            onClick={this.playAction}    
+                        >
+                            <i className={`far ${actionIcon}`}></i>
                             {/* pause icon: <i className="far fa-pause-circle"></i> */}
                         </button>
                     </div>

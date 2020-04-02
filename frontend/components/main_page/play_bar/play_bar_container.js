@@ -3,7 +3,7 @@ import PlayBar from './play_bar';
 
 const mSTP = state => {
     return {
-        msg: "Hello World"
+        currentSong: state.media.currentSong
     }
 }
 
