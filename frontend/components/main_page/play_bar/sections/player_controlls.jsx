@@ -18,22 +18,28 @@ class PlayerControlls extends React.Component {
         
     }
 
+    isPlaying() {
+        let audio = document.getElementById('media-player');
+        !audio.paused;
+    }
     
     play() {
         let { currentSong } = this.props;
-        if (currentSong.id) {
+        if (!this.isPlaying()) {
             this.setState({ playing: true })
         }
     }
 
     pause() {
-        this.setState({ playing: false })
+        if (!this.isPlaying()) {
+            this.setState({ playing: false })
+        }
     }
 
     playAction(e) {
         e.preventDefault();
         let { playing } = this.state;
-        playing ? this.mediaRef.play() : this.mediaRef.pause()
+        playing ? this.play() : this.pause()
     }
 
     // shuffle() {
@@ -50,6 +56,7 @@ class PlayerControlls extends React.Component {
         } else {
             return (
                 <audio
+                    id="media-player"
                     ref={this.mediaRef}
                     src={this.props.currentSong.trackUrl}
                     type="audio/mp4" 
@@ -61,8 +68,10 @@ class PlayerControlls extends React.Component {
     
 
     render() {
-        debugger
-        let actionIcon = this.state.playing ? 'fa-pause-circle' : 'fa-play-circle'
+        // debugger
+        console.log(this.state)
+        let { playing } = this.state;
+        let actionIcon = !playing ? 'fa-play-circle' : 'fa-pause-circle'
         return (
             <div className="player-controlls-div">
                 {this.mediaPlayer()}

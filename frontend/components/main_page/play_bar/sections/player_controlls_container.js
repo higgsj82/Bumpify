@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PlayerControlls from './player_controlls';
-import { updateCurrentSong } from '../../../../actions/media_actions';
+import { updateCurrentSong, playSong, pauseSong } from '../../../../actions/media_actions';
 
 const mSTP = state => {
     return {
@@ -10,7 +10,9 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        updateCurrentSong: song => dispatch(updateCurrentSong(song))
+        updateCurrentSong: song => dispatch(updateCurrentSong(song)),
+        playSong: song => dispatch(playSong(song)),
+        pauseSong: () => dispatch(pauseSong())
     }
 }
 

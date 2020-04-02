@@ -9,14 +9,14 @@ export const updateCurrentSong = song => {
     }
 }
 
-const playSong = song => {
+export const playSong = song => {
     return {
         type: PLAY_SONG,
         song
     }
 }
 
-const pauseSong = () => {
+export const pauseSong = () => {
     return {
         type: PAUSE_SONG
     }
