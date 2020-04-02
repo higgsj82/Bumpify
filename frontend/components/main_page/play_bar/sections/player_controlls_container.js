@@ -4,7 +4,7 @@ import { updateCurrentSong } from '../../../../actions/media_actions';
 
 const mSTP = state => {
     return {
-        currentSong: state.song
+        currentSong: state.media.currentSong
     }
 }
 

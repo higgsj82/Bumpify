@@ -7,16 +7,18 @@ class PlayerControlls extends React.Component {
         this.state = {
             playing: false
         }
+        this.mediaRef = React.createRef();
 
         this.play = this.play.bind(this);
         this.pause = this.pause.bind(this);
         this.playAction = this.playAction.bind(this);
     }
 
-    // // componentWillUpdate () {
+    componentDidUpdate () {
         
-    // // }
+    }
 
+    
     play() {
         let { currentSong } = this.props;
         if (currentSong.id) {
@@ -31,7 +33,7 @@ class PlayerControlls extends React.Component {
     playAction(e) {
         e.preventDefault();
         let { playing } = this.state;
-        playing ? this.play() : this.pause()
+        playing ? this.mediaRef.play() : this.mediaRef.pause()
     }
 
     // shuffle() {
@@ -41,12 +43,29 @@ class PlayerControlls extends React.Component {
     // repeat() {
         
     // }
+
+    mediaPlayer() {
+        if (!this.props.currentSong) {
+            return null
+        } else {
+            return (
+                <audio
+                    ref={this.mediaRef}
+                    src={this.props.currentSong.trackUrl}
+                    type="audio/mp4" 
+                    autoPlay>
+                </audio>
+            )
+        }
+    }
     
 
     render() {
+        debugger
         let actionIcon = this.state.playing ? 'fa-pause-circle' : 'fa-play-circle'
         return (
             <div className="player-controlls-div">
+                {this.mediaPlayer()}
                 {/* <audio controls src="https://bumpify-dev.s3.amazonaws.com/02+Hold+Up.m4a" itemType="audio/mpeg"></audio> */}
                 <div className="play-buttons-div">
                     <button className="play-buttons">
