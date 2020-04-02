@@ -16,7 +16,9 @@ class PlayerControlls extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        
+        let { playing, currentSong } = this.props;
+        if (prevProps.playing === playing) return;
+        this.setState({ playing, currentSong })
     }
 
     isPlaying() {
@@ -42,10 +44,10 @@ class PlayerControlls extends React.Component {
         let audio = document.getElementById('media-player');
         // let { playing } = this.state;
         if (audio && !audio.paused){ 
-            this.setState({ playing: true })
+            // this.setState({ playing: true })
             audio.play() 
         } else {
-            this.setState({ playing: false })
+            // this.setState({ playing: false })
             audio.pause()
         }
     }
@@ -88,11 +90,9 @@ class PlayerControlls extends React.Component {
                     ref={this.mediaRef}
                     src={currentSong.trackUrl}
                     type="audio/mp4" 
-                    // autoPlay
+                    autoPlay
                     >
                 </audio>
-                {/* {this.mediaPlayer()} */}
-                {/* <audio controls src="https://bumpify-dev.s3.amazonaws.com/02+Hold+Up.m4a" itemType="audio/mpeg"></audio> */}
                 <div className="play-buttons-div">
                     <button className="play-buttons">
                         <i className="fas fa-random"></i>
@@ -106,7 +106,6 @@ class PlayerControlls extends React.Component {
                             onClick={this.playAction}    
                         >
                             <i className={`far ${actionIcon}`}></i>
-                            {/* pause icon: <i className="far fa-pause-circle"></i> */}
                         </button>
                     </div>
                     <button className="play-buttons arrows">

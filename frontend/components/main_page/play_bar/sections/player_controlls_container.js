@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import PlayerControlls from './player_controlls';
 import { updateCurrentSong, playSong, pauseSong } from '../../../../actions/media_actions';
 
-const mSTP = state => {
+const mSTP = ({ media }) => {
     return {
-        currentSong: state.media.currentSong
+        playing: media.playing,
+        currentSong: media.currentSong
     }
 }
 
