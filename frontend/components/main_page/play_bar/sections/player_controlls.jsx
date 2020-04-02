@@ -5,16 +5,17 @@ class PlayerControlls extends React.Component {
         super(props);
 
         this.state = {
-            playing: false
+            playing: false,
+            currentSong: {}
         }
         this.mediaRef = React.createRef();
 
-        this.play = this.play.bind(this);
-        this.pause = this.pause.bind(this);
-        this.playAction = this.playAction.bind(this);
+        // this.play = this.play.bind(this);
+        // this.pause = this.pause.bind(this);
+        // this.playAction = this.playAction.bind(this);
     }
 
-    componentDidUpdate () {
+    componentDidUpdate(prevProps) {
         
     }
 
@@ -23,23 +24,30 @@ class PlayerControlls extends React.Component {
         !audio.paused;
     }
     
-    play() {
-        let { currentSong } = this.props;
-        if (!this.isPlaying()) {
+    start() {
+        // let { currentSong } = this.props;
+        // if (this.isPlaying()) {
             this.setState({ playing: true })
-        }
+        // }
     }
 
-    pause() {
-        if (!this.isPlaying()) {
+    stop() {
+        // if (!this.isPlaying()) {
             this.setState({ playing: false })
-        }
+        // }
     }
 
     playAction(e) {
         e.preventDefault();
-        let { playing } = this.state;
-        playing ? this.play() : this.pause()
+        let audio = document.getElementById('media-player');
+        // let { playing } = this.state;
+        if (audio && !audio.paused){ 
+            this.setState({ playing: true })
+            audio.play() 
+        } else {
+            this.setState({ playing: false })
+            audio.pause()
+        }
     }
 
     // shuffle() {
@@ -50,31 +58,40 @@ class PlayerControlls extends React.Component {
         
     // }
 
-    mediaPlayer() {
-        if (!this.props.currentSong) {
-            return null
-        } else {
-            return (
-                <audio
-                    id="media-player"
-                    ref={this.mediaRef}
-                    src={this.props.currentSong.trackUrl}
-                    type="audio/mp4" 
-                    autoPlay>
-                </audio>
-            )
-        }
-    }
+    // mediaPlayer() {
+    //     if (!this.props.currentSong) {
+    //         return null
+    //     } else {
+    //         return (
+    //             <audio
+    //                 id="media-player"
+    //                 ref={this.mediaRef}
+    //                 src={this.props.currentSong.trackUrl}
+    //                 type="audio/mp4" 
+    //                 // autoPlay
+    //                 >
+    //             </audio>
+    //         )
+    //     }
+    // }
     
 
     render() {
         // debugger
         console.log(this.state)
-        let { playing } = this.state;
+        let { playing, currentSong } = this.state;
         let actionIcon = !playing ? 'fa-play-circle' : 'fa-pause-circle'
         return (
             <div className="player-controlls-div">
-                {this.mediaPlayer()}
+                <audio
+                    id="media-player"
+                    ref={this.mediaRef}
+                    src={currentSong.trackUrl}
+                    type="audio/mp4" 
+                    // autoPlay
+                    >
+                </audio>
+                {/* {this.mediaPlayer()} */}
                 {/* <audio controls src="https://bumpify-dev.s3.amazonaws.com/02+Hold+Up.m4a" itemType="audio/mpeg"></audio> */}
                 <div className="play-buttons-div">
                     <button className="play-buttons">

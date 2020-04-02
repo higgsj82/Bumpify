@@ -6,6 +6,8 @@ import VolumeControlls from './sections/volume_controlls';
 class PlayBar extends React.Component {
     constructor(props) {
         super(props);
+
+        // this.mediaRef = React.createRef();
     }
 
     render() {
