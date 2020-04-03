@@ -7,7 +7,7 @@
     height: 100%;
     width: 100%;
     background-color: #202020;
-    overflow: auto;
+    overflow-y: scroll;
 }
 
 .main-root-header {
@@ -72,4 +72,15 @@
     display: flex;
     flex-direction: row;
     cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background-clip: padding-box;
+    background-color: #383838;
+    min-height: 20%;
 }
