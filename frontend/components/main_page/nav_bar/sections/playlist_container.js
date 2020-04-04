@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import Playlists from './playlists';
 
 const mSTP = (state = {}, ownProps) => {
-    // debugger
     return {
         playlists: state.entities.music.playlists
     }

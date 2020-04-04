@@ -79,8 +79,6 @@ class PlayerControlls extends React.Component {
     
 
     render() {
-        // debugger
-        console.log(this.state)
         let { playing, currentSong } = this.state;
         let actionIcon = !playing ? 'fa-play-circle' : 'fa-pause-circle'
         return (

@@ -25,7 +25,6 @@ class Playlists extends React.Component {
     }
 
     render() {
-        // debugger
         return(
             <div className="playlist-main-div" >
                 <div className="playlist-div">
