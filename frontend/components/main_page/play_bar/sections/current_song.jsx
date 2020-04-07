@@ -6,14 +6,15 @@ class CurrentSong extends React.Component {
     }
 
     render() {
+        let { currentSong, currentArtist } = this.props;
         return (
             <div className="current-song-div">
                 <div className="current-song">
-                    <p>Formation</p>
+                    <p>{currentSong ? currentSong.song_name : null}</p>
                     <i className="far fa-heart"></i>
                 </div>
                 <div className="current-artist">
-                    <p>Beyoncé</p>
+                    <p>{currentArtist ? currentArtist.artist_name : null}</p>
                 </div>
             </div>
         )

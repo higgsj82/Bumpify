@@ -11,13 +11,14 @@ class PlayBar extends React.Component {
     }
 
     render() {
+        // debugger
         return (
-            <footer className="play-bar">
-                <CurrentSong/>
-                <PlayerControlls currentSong={this.props.currentSong}/>
-                <VolumeControlls/>
-            </footer>
-        )
+          <footer className="play-bar">
+            <CurrentSong currentSong={this.props.currentSong} currentArtist={this.props.currentArtist}/>
+            <PlayerControlls currentSong={this.props.currentSong} />
+            <VolumeControlls />
+          </footer>
+        );
     }
 }
 

@@ -10,8 +10,8 @@ class PlayerControlls extends React.Component {
         }
         // this.mediaRef = React.createRef();
 
-        // this.play = this.play.bind(this);
-        // this.pause = this.pause.bind(this);
+        this.play = this.play.bind(this);
+        this.pause = this.pause.bind(this);
         this.playAction = this.playAction.bind(this);
     }
 
@@ -46,7 +46,6 @@ class PlayerControlls extends React.Component {
     playAction(e) {
         e.preventDefault();
         let { playing } = this.state;
-        // (!playing) ? this.play() : this.pause();
         !playing ? this.play() : this.pause()
     }
 

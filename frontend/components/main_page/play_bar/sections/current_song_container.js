@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import CurrentSong from './current_song';
 
-const mSTP = state => {
+const mSTP = ({ media }) => {
     return {
-        currentSong: state.media.currentSong
+        currentSong: media.currentSong
         // currentArtist: state.currentArtist
     }
 }
