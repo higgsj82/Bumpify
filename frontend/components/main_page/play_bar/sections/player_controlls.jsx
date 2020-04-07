@@ -10,37 +10,44 @@ class PlayerControlls extends React.Component {
         }
         // this.mediaRef = React.createRef();
 
-        this.play = this.play.bind(this);
-        this.pause = this.pause.bind(this);
+        // this.play = this.play.bind(this);
+        // this.pause = this.pause.bind(this);
         this.playAction = this.playAction.bind(this);
     }
 
     componentDidUpdate(prevProps) {
         let { playing, currentSong } = this.props;
-        if (prevProps.playing === playing) return;
-        this.setState({ playing, currentSong })
+        if (prevProps.playing !== playing) { this.setState({ playing }) }
+        if (prevProps.currentSong !== currentSong) { this.setState({ currentSong }) }
     }
-
-    // isPlaying() {
-    //     let audio = document.getElementById('media-player');
-    //     !audio.paused;
+    
+    // componentDidMount() {
+    //     let { playing, currentSong } = this.props;
+    //     this.setState({ playing, currentSong })
     // }
+
+    isPlaying() {
+        !audio.paused;
+    }
     
     play() {
         let { currentSong } = this.props;
         if (currentSong) {
             this.setState({ playing: true })
         }
+        this.media.play();
     }
 
     pause() {
         this.setState({ playing: false })
+        this.media.pause();
     }
 
     playAction(e) {
         e.preventDefault();
         let { playing } = this.state;
-        (!playing) ? this.play() : this.pause();
+        // (!playing) ? this.play() : this.pause();
+        !playing ? this.play() : this.pause()
     }
 
     // shuffle() {
@@ -73,7 +80,7 @@ class PlayerControlls extends React.Component {
         // debugger
         let { playing, currentSong } = this.state;
         console.log(playing);
-        console.log(currentSong.song_name)
+        console.log(this.props.playing);
         let actionIcon = !playing ? 'fa-play-circle' : 'fa-pause-circle'
         return (
             <div className="player-controlls-div">
@@ -82,7 +89,7 @@ class PlayerControlls extends React.Component {
                     ref={(media) => {this.media = media}}
                     src={currentSong.trackUrl}
                     type="audio/mp4" 
-                    autoPlay
+                    // autoPlay
                     >
                 </audio>
                 <div className="play-buttons-div">
