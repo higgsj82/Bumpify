@@ -79,11 +79,11 @@ class LoginForm extends React.Component {
                             </div>
                         </div>
                     </form>
-                    <div className="forgot-div">
+                    {/* <div className="forgot-div">
                         <p>
                             <a href="#">Forgot your password?</a>
                         </p>
-                    </div>
+                    </div> */}
                     <div className="last-div">
                         <div className="opp-link-div">
                             <p>Don't have an account?</p>
