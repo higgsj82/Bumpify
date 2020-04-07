@@ -18,13 +18,13 @@ const mediaReducer = (state = defaultState, action) => {
         case RECEIVE_ARTIST:
             return Object.assign({}, state, action.artist.popularSongs)
         case UPDATE_CURRENT_SONG: 
-            return { currentSong: action.song }
+            return Object.assign({}, state, { currentSong: action.song })
         case PLAY_SONG:
-            newState.playing = true;
-            return newState;
+            // newState.playing = true;
+            return Object.assign({}, state, {playing: true})
         case PAUSE_SONG:
-            newState.playing = false;
-            return newState;
+            // newState.playing = false;
+            return Object.assign({}, state, { playing: false });
         default:
             return state;
     }

@@ -8,11 +8,11 @@ class PlayerControlls extends React.Component {
             playing: false,
             currentSong: {}
         }
-        this.mediaRef = React.createRef();
+        // this.mediaRef = React.createRef();
 
-        // this.play = this.play.bind(this);
-        // this.pause = this.pause.bind(this);
-        // this.playAction = this.playAction.bind(this);
+        this.play = this.play.bind(this);
+        this.pause = this.pause.bind(this);
+        this.playAction = this.playAction.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -21,35 +21,26 @@ class PlayerControlls extends React.Component {
         this.setState({ playing, currentSong })
     }
 
-    isPlaying() {
-        let audio = document.getElementById('media-player');
-        !audio.paused;
-    }
+    // isPlaying() {
+    //     let audio = document.getElementById('media-player');
+    //     !audio.paused;
+    // }
     
-    start() {
-        // let { currentSong } = this.props;
-        // if (this.isPlaying()) {
+    play() {
+        let { currentSong } = this.props;
+        if (currentSong) {
             this.setState({ playing: true })
-        // }
+        }
     }
 
-    stop() {
-        // if (!this.isPlaying()) {
-            this.setState({ playing: false })
-        // }
+    pause() {
+        this.setState({ playing: false })
     }
 
     playAction(e) {
         e.preventDefault();
-        let audio = document.getElementById('media-player');
-        // let { playing } = this.state;
-        if (audio && !audio.paused){ 
-            // this.setState({ playing: true })
-            audio.play() 
-        } else {
-            // this.setState({ playing: false })
-            audio.pause()
-        }
+        let { playing } = this.state;
+        (!playing) ? this.play() : this.pause();
     }
 
     // shuffle() {
@@ -79,13 +70,16 @@ class PlayerControlls extends React.Component {
     
 
     render() {
+        // debugger
         let { playing, currentSong } = this.state;
+        console.log(playing);
+        console.log(currentSong.song_name)
         let actionIcon = !playing ? 'fa-play-circle' : 'fa-pause-circle'
         return (
             <div className="player-controlls-div">
                 <audio
                     id="media-player"
-                    ref={this.mediaRef}
+                    ref={(media) => {this.media = media}}
                     src={currentSong.trackUrl}
                     type="audio/mp4" 
                     autoPlay
