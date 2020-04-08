@@ -43,6 +43,7 @@ class Playlists extends React.Component {
                             <NewPlaylist exitModal={this.closeModal} />
                         </Modal>
                     </div>
+                    <hr className="playlist-divider"/>
                     {/* liked songs playlist here */}
                     <div className="playlist-index-container">
                         <PlaylistIndexContainer/>
