@@ -3,8 +3,9 @@ import NavBar from './nav_bar';
 
 const mSTP = state => {
     return {
-        currentSong: state.media.currentSong
-    }
+      currentSong: state.media.currentSong,
+      currentAlbum: state.media.currentAlbum
+    };
 }
 
 // const mDTP = dispatch => {

@@ -4,7 +4,8 @@ import PlayBar from './play_bar';
 const mSTP = state => {
     return {
       currentSong: state.media.currentSong,
-      currentArtist: state.media.currentArtist
+      currentArtist: state.media.currentArtist,
+      currentAlbum: state.media.currentAlbum
     };
 }
 

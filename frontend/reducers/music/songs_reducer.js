@@ -4,6 +4,7 @@ import { RECEIVE_ALBUM } from '../../actions/album_actions';
 
 const songsReducer = (state = {}, action) => {
     Object.freeze(state);
+    debugger
     switch (action.type) {
         case RECEIVE_SONG:
             return Object.assign({}, state, { [action.song.id]: action.song })

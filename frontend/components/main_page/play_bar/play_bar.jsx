@@ -12,10 +12,15 @@ class PlayBar extends React.Component {
 
     render() {
         // debugger
+        let {
+            currentSong,
+            currentArtist,
+            currentAlbum
+        } = this.props;
         return (
           <footer className="play-bar">
-            <CurrentSong currentSong={this.props.currentSong} currentArtist={this.props.currentArtist}/>
-            <PlayerControlls currentSong={this.props.currentSong} />
+            <CurrentSong currentSong={currentSong} currentArtist={currentArtist}/>
+            <PlayerControlls currentSong={currentSong} />
             <VolumeControlls />
           </footer>
         );

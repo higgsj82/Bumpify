@@ -41,7 +41,7 @@ class NavBar extends React.Component {
                 </ul>
                 <PlaylistContainer/>
                 <div className="current-album-div">
-                    <img className='current-album' src={window.currentAlbum} />
+                    <img className='current-album' src={this.props.currentAlbum} />
                 </div>
             </div>
         )
