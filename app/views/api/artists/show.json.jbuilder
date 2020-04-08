@@ -5,6 +5,10 @@ json.artist do
     json.song_ids popular_songs.pluck(:id)
 end
 # albums
+@artist.albums.each do |album|
+    json.extract! album, :id, :album_name
+    json.albumCover url_for album.album_cover
+end
 json.albums @artist.albums
 # songs
 
