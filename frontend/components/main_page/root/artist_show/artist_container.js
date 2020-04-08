@@ -18,7 +18,7 @@ const mSTP = (state = {}, ownProps) => {
 
     return {
         artistId,
-        artist: artist,
+        artist,
         albumIds,
         popularSongs
     }

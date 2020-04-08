@@ -3,9 +3,9 @@ import PlayBar from './play_bar';
 
 const mSTP = state => {
     return {
-        currentSong: state.media.currentSong,
-        currentArtist: state.media.currentArtist
-    }
+      currentSong: state.media.currentSong,
+      currentArtist: state.media.currentArtist
+    };
 }
 
 // const mDTP = dispatch => {

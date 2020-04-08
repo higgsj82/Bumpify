@@ -36,6 +36,17 @@ channel = Album.create!(album_name: 'channel ORANGE', artist_id: frank.id)
 blonde = Album.create!(album_name: 'Blonde', artist_id: frank.id)
 ctrl = Album.create!(album_name: 'Ctrl', artist_id: sza.id)
 
+# album covers
+lemonade_cover = open('https://bumpify-prod.s3.amazonaws.com/Album+Covers/lemonade.png')
+channel_cover = open('https://bumpify-prod.s3.amazonaws.com/Album+Covers/channel.jpg')
+blonde_cover = open('https://bumpify-prod.s3.amazonaws.com/Album+Covers/blonde.jpg')
+ctrl_cover = open('https://bumpify-prod.s3.amazonaws.com/Album+Covers/ctrl.png')
+
+lemonade.album_cover.attach(io: lemonade_cover, filename: 'lemonade.png')
+channel.album_cover.attach(io: channel_cover, filename: 'channel.jpg')
+blonde.album_cover.attach(io: blonde_cover, filename: 'blonde.jpg')
+ctrl.album_cover.attach(io: ctrl_cover, filename: 'ctrl.png')
+
 # lemonade
 pray = Song.create!(song_name: 'Pray You Catch Me', album_id: lemonade.id)
 hold_up = Song.create!(song_name: 'Hold Up', album_id: lemonade.id)
