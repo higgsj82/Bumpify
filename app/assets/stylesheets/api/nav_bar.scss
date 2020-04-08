@@ -6,12 +6,12 @@
     background-color: black;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .nav-logo-div {
-    width: 151px;
-    height: 50px;
+    width: 200px;
+    // height: 50px;
     padding: 24px
 }
 
@@ -43,7 +43,7 @@
 }
 
 .playlist-main-div {
-    height: 140px;
+    height: 100%;
     margin-top: 24px;
 }
 
@@ -86,13 +86,22 @@
     font-weight: bold;
 }
 
+.playlist-divider {
+    margin: 8px 21px;
+    border-color: #282828;
+}
+
+.current-album-div {
+    margin-top: auto;
+}
+
 .current-album {
     height: 100%;
 }
 
 .playlist-index-container {
     overflow-y: auto;
-    height: 110px;
+    height: 90px;
 }
 
 .playlist-index {
